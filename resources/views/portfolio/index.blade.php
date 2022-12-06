@@ -738,7 +738,7 @@ Very passionate about aesthetics and UI design.</p>
     //    alert(response.data.message);
       
       //application/x-www-form-urlencoded
-      axios.post('/portfolio-project/contact', {
+      axios.post('/portfolio-project/message', {
           name: document.getElementById('name').value,
           email: document.getElementById('email').value,
           message: document.getElementById('message').value,

@@ -45,6 +45,7 @@ Route::group([
 
     Route::prefix('portfolio-project')->group(function () {
         // Route::post('/contact', [ContactController::class ,'store'])->name('contacts.store');
+    Route::post('/message', [App\Http\Controllers\MessageController::class ,'store'])->name('messages.store');
         
         Route::get('/',[ HomeController::class,'index'])->name('app.index');
     });
