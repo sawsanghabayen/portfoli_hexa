@@ -16,7 +16,7 @@ class MessageController extends Controller
     public function index()
     {
         $messages=Message::all();
-        // return response()->view('admin.contact-requests.index',['messages'=>$messages]);
+        return response()->view('admin.contact-requests.index',['messages'=>$messages]);
     }
 
     /**
@@ -108,6 +108,14 @@ class MessageController extends Controller
      */
     public function destroy(Message $message)
     {
-        //
+        $deleted = $message->delete();
+        return response()->json(
+            [
+                'title' => $deleted ? 'Deleted!' : 'Delete Failed!',
+                'text' => $deleted ? 'Message deleted successfully' : 'Message deleting failed!',
+                'icon' => $deleted ? 'success' : 'error'
+            ],
+            $deleted ? Response::HTTP_OK : Response::HTTP_BAD_REQUEST
+        );
     }
 }

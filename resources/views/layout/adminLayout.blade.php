@@ -223,8 +223,8 @@
 								<i class="menu-icon ki ki-bold-more-hor icon-md"></i>
 							</li>
 
-									{{-- <li class="menu-item {{(explode("/", request()->url())[5] == "contacts") ? "menu-item-here" : ''}}"                                     aria-haspopup="true">
-                                        <a href="{{url(getLocal().'/admin/contacts')}}" class="menu-link">
+									<li class="menu-item {{(explode("/", request()->url())[5] == "messages") ? "menu-item-here" : ''}}"                                     aria-haspopup="true">
+                                        <a href="{{url(getLocal().'/admin/messages')}}" class="menu-link">
 											  <span class="svg-icon menu-icon">
 												<!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2021-05-14-112058/theme/html/demo1/dist/../src/media/svg/icons/Communication/Mail.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -234,18 +234,13 @@
                                                 </svg>
                                                   <!--end::Svg Icon-->
 											  </span>
-                                            <span class="menu-text">{{__('cp.contacts')}}</span>
+                                            <span class="menu-text">{{__('cp.messages')}}</span>
 
-                                            @php
-                                                $contacts_count=\App\Models\Contact::query()->where('is_read','0')->count();
-                                            @endphp
-                                            @if($contacts_count>0)
-                                                <span class="label label-rounded label-danger">{{$contacts_count}}</span>
-                                            @endif
+                                        
 
 
                                         </a>
-                                    </li> --}}
+                                    </li>
 
 
                                 {{-- @endif --}}
@@ -325,7 +320,7 @@
 										<i class="menu-icon ki ki-bold-more-hor icon-md"></i>
 									</li>
                                     <li class="menu-item" aria-haspopup="true">
-                                        <a href="{{url(getLocal().'/admin/infos')}}" class="menu-link">
+                                        <a href="{{url(getLocal().'/admin/infos/1/edit')}}" class="menu-link">
 											<span class="svg-icon menu-icon">
 												<!--begin::Svg Icon | path:assets/media/svg/icons/Design/Bucket.svg-->
 												<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -373,22 +368,14 @@
                                             <ul class="menu-subnav">
 
                                                 <li class="menu-item" aria-haspopup="true">
-                                                    <a href="{{url(getLocal().'/admin/settings')}}" class="menu-link">
+                                                    <a href="{{url(getLocal().'/admin/settings/1/edit')}}" class="menu-link">
                                                         <i class="menu-bullet menu-bullet-dot">
                                                             <span></span>
                                                         </i>
                                                         <span class="menu-text">{{__('cp.general_setting')}}</span>
                                                     </a>
                                                 </li>
-                                                <li class="menu-item" aria-haspopup="true">
-                                                    <a href="{{url(getLocal().'/admin/system_maintenance')}}"
-                                                       class="menu-link">
-                                                        <i class="menu-bullet menu-bullet-dot">
-                                                            <span></span>
-                                                        </i>
-                                                        <span class="menu-text">{{__('cp.system_maintenance')}} </span>
-                                                    </a>
-                                                </li>
+                                        
                                             </ul>
                                         </div>
                                     </li>

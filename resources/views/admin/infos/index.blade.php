@@ -105,26 +105,7 @@
                                         </div>
                                         </div>
                                     </td>
-                                    {{-- <td class="v-align-middle wd-5p"><img src="{{$info->image}}" width="50px" height="50px"></td> --}}
-{{-- 
-
-                                    <td class="pl-0 py-8">
-                                        <div class="d-flex align-items-center">
-                                        <div class="symbol symbol-50 symbol-light mr-4">
-                                            <span class="symbol-label">
-                                                @if($info->image !=null)
-                                                <img src="{{$info->image}}"
-                                                    class="h-75 align-self-end" alt="" />
-                                                    @else
-                                                    <img src="{{asset('assets/media/users/blank.png')}}"
-                                                    class="h-75 align-self-end" alt="" />
-                                                    @endif
-            
-                                            </span>
-                                        </div>
-                                        </div>
-                                    </td> --}}
-                                  
+                               
                                
                                     <td>
                                         <span class="text-dark-75 font-weight-bolder d-block font-size-lg">{{$info->f_name}}</span>

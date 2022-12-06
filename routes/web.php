@@ -193,6 +193,8 @@ Route::get('/cv',[ App\Http\Controllers\InfoController::class,'downloadCv'])->na
         Route::resource('skills', SkillController::class);
         Route::resource('projects', ProjectController::class);
         Route::resource('infos', InfoController::class);
+        Route::get('/messages', [App\Http\Controllers\MessageController::class ,'index'])->name('messages.index');
+        Route::delete('/messages/{id}', [App\Http\Controllers\MessageController::class ,'destroy'])->name('messages.delete');
 
         // Route::get('/settings', 'WEB\Admin\SettingController@index');
         // Route::get('/settings/create', 'WEB\Admin\SettingController@create');
