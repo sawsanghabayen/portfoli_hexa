@@ -8,13 +8,14 @@ use App\Models\Order;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Admin;
 
 class HomeController extends Controller
 {
 
     public function index()
     {
-        $users_count =User::where('is_deleted','0')->count();
+        $admins_count =Admin::count();
         $vendors_count =Subadmin::count();
         $sales_from_all_vendors_in_this_day = Order::whereDate('created_at', Carbon::today())->where('status','4')->sum('total');
         $orders_from_all_vendors_in_this_day = Order::whereDate('created_at', Carbon::today())->count();
@@ -28,7 +29,7 @@ class HomeController extends Controller
         $canceled_orders = Order::where('status','5')->count();
 
 
-        return view('admin.home.dashboard')->with(compact('users_count',
+        return view('admin.home.dashboard')->with(compact('admins_count',
             'vendors_count','sales_from_all_vendors_in_this_day','orders_from_all_vendors_in_this_day'
         ,'avg_from_all_vendors','total_sales_from_all_vendors','total_orders_from_all_vendors'
         ,'confirmed_orders','under_preparing_orders','ready_to_pick_orders','completed_orders','canceled_orders'));
