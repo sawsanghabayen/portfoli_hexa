@@ -377,6 +377,7 @@ return [
     'add_skill'=>'Add Skill',
     'edit_skill'=>'Edit Skill',
     'degree'=>'Degree',
+    'freelane'=>'Freelance',
     'enter_degree'=>'Enter Degree',
     'title_en'=>'Title In English',
     'title_ar'=>'Title In Arabic',

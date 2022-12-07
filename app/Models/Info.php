@@ -12,9 +12,15 @@ class Info extends Model
 
     public $translatedAttributes = ['f_name','l_name','location','job'];
     protected $hidden=['translations','updated_at','deleted_at'];
+
     public function getActiveStatusAttribute()
     {
+        if (getLocal() =='en')
         return $this->freelance_active ? 'Available' : 'Disabled';
+        elseif (getLocal() =='ar')
+        return $this->freelance_active ? 'متاح' : 'غير متاح';
+        
+       
     }
 
     

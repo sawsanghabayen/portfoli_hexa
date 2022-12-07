@@ -49,6 +49,13 @@ style="direction: {{App::isLocale('en') ? 'ltr' : 'rtl'}};">
 							</a>
 						</div>
 					</li>
+                    <li>
+						<div>
+							<a id="link-contact" href="#contact">
+								<i class="fa fa-envelope-open"></i><span>{{__('cp.get_in_touch')}} </span>
+							</a>
+						</div>
+					</li>
 					<li>
 						<div>
 							<a id="link-work" href="#work">
@@ -56,13 +63,7 @@ style="direction: {{App::isLocale('en') ? 'ltr' : 'rtl'}};">
 							</a>
 						</div>
 					</li>
-					<li>
-						<div>
-							<a id="link-contact" href="#contact">
-								<i class="fa fa-envelope-open"></i><span>{{__('cp.get_in_touch')}} </span>
-							</a>
-						</div>
-					</li>
+				
 				</ul>
 				<!-- Mobile Navigation Ends -->
 			</div>
@@ -75,8 +76,8 @@ style="direction: {{App::isLocale('en') ? 'ltr' : 'rtl'}};">
 			<ul class="stretchy-nav">
 				<li class="active"><a class="home" href="#home"><span>{{__('cp.home')}}</span></a></li>
 				<li><a href="#about"><span>{{__('cp.about')}}</span></a></li>
-				<li><a href="#works"><span>{{__('cp.contact')}}</span></a></li>
-				<li><a href="#contact"><span>{{__('cp.portfolio')}}</span></a></li>
+				<li><a href="#works"><span>{{__('cp.portfolio')}}</span></a></li>
+				<li><a href="#contact"><span>{{__('cp.contact')}}</span></a></li>
 				{{-- <li><a href="#works"><span>{{__('cp.portfolio')}}</span></a></li> --}}
 			</ul>
 			<span aria-hidden="true" class="stretchy-nav-bg"></span>
@@ -100,8 +101,7 @@ style="direction: {{App::isLocale('en') ? 'ltr' : 'rtl'}};">
 						  <span class="ah-words-wrapper">
 							<b class="is-visible">{{$infos[0]->f_name}} {{$infos[0]->l_name}}</b>
 							<b>{{$infos[0]->job}}</b>
-							{{-- <b>Full Stack</b>
-							<b>a freelancer</b> --}}
+						
 						  </span>
 					    </h1>
                         <p>{{$settings[0]->description_home}}</p>
@@ -303,93 +303,7 @@ style="direction: {{App::isLocale('en') ? 'ltr' : 'rtl'}};">
             <!-- About Section Ends -->
 
               <!-- Contact Section Starts -->
-              <section id="contact">
-                <div class="contact-container">
-                    <!-- Main Heading Starts -->
-                    <div class="container page-title text-center">
-                        <h2 class="text-center">{{__('cp.get')}} <span>{{__('cp.in_touch')}}</span></h2>
-						<span class="title-head-subtitle">{{$settings[0]->description_contact}}</span>
-                    </div>
-                    <!-- Main Heading Ends -->
-                    <div class="container">
-                        <div class="row contact">
-                            <!-- Contact Infos Starts -->
-                            <div class="col-12 col-md-4 col-xl-4 leftside">
-                                <ul class="custom-list">
-                                    <li>
-                                        <h6 class="font-weight-600"> <span class="contact-title">{{__('cp.phone')}}</span><i class="fa fa-whatsapp"></i><span class="contact-content">{{$infos[0]->mobile}}</span></h6>
-                                    </li>
-                                    <li>
-                                        <h6 class="font-weight-600"> <span class="contact-title">{{__('cp.email')}}</span><i class="fa fa-envelope-o fs-14"></i><span class="contact-content">{{$infos[0]->email}}</span></h6>
-
-                                    </li>
-                                    <li>
-                                        <h6 class="font-weight-600"><span class="contact-title">{{__('cp.instagram')}}</span><i class="fa fa-instagram"></i><span class="contact-content">{{$infos[0]->facebook_url}}</span></h6>
-
-                                    </li>
-                                    <li>
-                                        <h6 class="font-weight-600"><span class="contact-title">{{__('cp.dribbble')}} </span><i class="fa fa-dribbble"></i><span class="contact-content">{{$infos[0]->dribbble}}</span></h6>
-                                    </li>
-                                </ul>
-
-                                <!-- Social Media Profiles Starts -->
-
-                                <div class="social">
-                                    <h6 class="font-weight-600 uppercase">{{__('cp.social_profile')}}</h6>
-                                    <ul class="list-inline social social-intro text-center p-none">
-                                        <li class="facebook"><a title="Facebook" href="{{$infos[0]->facebook_url}}"><i class="fa fa-facebook"></i></a>
-                                        </li>
-                                        <li class="twitter"><a title="Twitter" href="{{$infos[0]->twitter_url}}"><i class="fa fa-twitter"></i></a>
-                                        </li>
-                                        <li class="youtube"><a title="Youtube" href="{{$infos[0]->youtube_url}}"><i class="fa fa-youtube"></i></a>
-                                        </li>
-                                        <li class="dribbble"><a title="Dribbble" href="{{$infos[0]->dribbble}}"><i class="fa fa-dribbble"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <!-- Social Media Profiles Ends -->
-                            </div>
-                            <!-- Contact Infos Ends -->
-                            <!-- Contact Form Starts -->
-                            <div class="col-12 col-md-8 col-xl-8 rightside">
-                                <p>
-                                    {{$settings[0]->description_contact}}
-                                </p>
-                                <form id="create-form" class="contactform" >
-                                    <div class="row">
-                                        <!-- Name Field Starts -->
-                                        <div class="form-group col-xl-6"> <i class="fa fa-user prefix"></i>
-                                            <input id="name"  type="text" class="form-control" placeholder="{{__('cp.your_name')}}" required>
-                                        </div>
-                                        <!-- Name Field Ends -->
-                                        <!-- Email Field Starts -->
-                                        <div class="form-group col-xl-6"> <i class="fa fa-envelope prefix"></i>
-                                            <input id="email" type="email" class="form-control" placeholder="{{__('cp.your_email')}}"  required>
-                                        </div>
-                                        <!-- Email Field Ends -->
-                                        <!-- Comment Textarea Starts -->
-                                        <div class="form-group col-xl-12"> <i class="fa fa-messages prefix"></i>
-                                            <textarea id="message" class="form-control" placeholder="{{__('cp.your_message')}}"  required></textarea>
-                                        </div>
-                                        <!-- Comment Textarea Ends -->
-                                    </div>
-                                    <!-- Submit Form Button Starts -->
-                                    <div class="submit-form">
-                                            {{-- <button class="btn button-animated" type="submit" name="send"><span><i class="fa fa-send"></i> Send Message</span></button> --}}
-                                        {{-- <input  type="button" name="send"><span><i class="fa fa-send" onclick="performStore()"></i> Send Message</span></button> --}}
-                                        <button  onclick="performStore()" class="btn button-animated" name="send"><span><i class="fa fa-send" ></i> {{__('cp.send_message')}} </span></button>
-                                    </div>
-                                    <!-- Submit Form Button Ends -->
-                                    {{-- <div class="form-message"> <span class="output_message text-center font-weight-600 uppercase"></span>
-                                    </div> --}}
-                                </form>
-                            </div>
-                            <!-- Contact Form Ends -->
-
-                        </div>
-                    </div>
-                </div>
-            </section>
+           
             <!-- Contact Section Ends -->
             <!-- Portfolio Section Starts -->
             <section id="work">
@@ -595,119 +509,92 @@ style="direction: {{App::isLocale('en') ? 'ltr' : 'rtl'}};">
                 <!-- Portfolio Project Content Ends -->
             </section>
             <!-- Portfolio Section Ends -->
-          
-            <!-- Blog Section Starts -->
-            <section id="blog">
-                <div class="container page-title text-center">
-                    <h2 class="text-center">{{__('cp.latest')}} <span>{{__('cp.posts')}}</span></h2>
-					<span class="title-head-subtitle">tips, insights, and best practices about web design and developpment</span>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <!-- Article Starts -->
-                        <div class="col-12 col-sm-6">
-                            <article>
-                                <!-- Figure Starts -->
-                                <figure class="blog-figure">
-                                    <a href="blog-post.html">
-                                        <img class="img-fluid" src="img/blog/blog-post-4.jpg" alt="">
-                                    </a>
-                                    <div class="post-date"> <span>23</span>
-                                        <span>JUN</span>
-                                    </div>
-                                </figure>
-                                <!-- Figure Ends -->
-                                <a href="blog-post.html">
-                                    <h4>create a wordpress theme from scratch</h4>
-                                </a>
-                                <!-- Excerpt Starts -->
-                                <div class="blog-excerpt">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit massa vel mauris Lorem ...</p>
-                                    <a href="blog-post.html" class="btn readmore"><span>Read more</span></a>
+        
+           
+            <section id="contact">
+                <div class="contact-container">
+                    <!-- Main Heading Starts -->
+                    <div class="container page-title text-center">
+                        <h2 class="text-center">{{__('cp.get')}} <span>{{__('cp.in_touch')}}</span></h2>
+						<span class="title-head-subtitle">{{$settings[0]->description_contact}}</span>
+                    </div>
+                    <!-- Main Heading Ends -->
+                    <div class="container">
+                        <div class="row contact">
+                            <!-- Contact Infos Starts -->
+                            <div class="col-12 col-md-4 col-xl-4 leftside">
+                                <ul class="custom-list">
+                                    <li>
+                                        <h6 class="font-weight-600"> <span class="contact-title">{{__('cp.phone')}}</span><i class="fa fa-whatsapp"></i><span class="contact-content">{{$infos[0]->mobile}}</span></h6>
+                                    </li>
+                                    <li>
+                                        <h6 class="font-weight-600"> <span class="contact-title">{{__('cp.email')}}</span><i class="fa fa-envelope-o fs-14"></i><span class="contact-content">{{$infos[0]->email}}</span></h6>
+
+                                    </li>
+                                    <li>
+                                        <h6 class="font-weight-600"><span class="contact-title">{{__('cp.instagram')}}</span><i class="fa fa-instagram"></i><span class="contact-content">{{$infos[0]->facebook_url}}</span></h6>
+
+                                    </li>
+                                    <li>
+                                        <h6 class="font-weight-600"><span class="contact-title">{{__('cp.dribbble')}} </span><i class="fa fa-dribbble"></i><span class="contact-content">{{$infos[0]->dribbble}}</span></h6>
+                                    </li>
+                                </ul>
+
+                                <!-- Social Media Profiles Starts -->
+
+                                <div class="social">
+                                    <h6 class="font-weight-600 uppercase">{{__('cp.social_profile')}}</h6>
+                                    <ul class="list-inline social social-intro text-center p-none">
+                                        <li class="facebook"><a title="Facebook" href="{{$infos[0]->facebook_url}}"><i class="fa fa-facebook"></i></a>
+                                        </li>
+                                        <li class="twitter"><a title="Twitter" href="{{$infos[0]->twitter_url}}"><i class="fa fa-twitter"></i></a>
+                                        </li>
+                                        <li class="youtube"><a title="Youtube" href="{{$infos[0]->youtube_url}}"><i class="fa fa-youtube"></i></a>
+                                        </li>
+                                        <li class="dribbble"><a title="Dribbble" href="{{$infos[0]->dribbble}}"><i class="fa fa-dribbble"></i></a>
+                                        </li>
+                                    </ul>
                                 </div>
-                                <!-- Excerpt Ends -->
-                            </article>
-                        </div>
-                        <!-- Article Ends -->
-                        <!-- Article Starts -->
-                        <div class="col-12 col-sm-6">
-                            <article>
-                                <!-- Figure Starts -->
-                                <figure class="blog-figure">
-                                    <a href="blog-post.html">
-                                        <img class="img-fluid" src="img/blog/blog-post-1.jpg" alt="">
-                                    </a>
-                                    <div class="post-date"> <span>18</span>
-                                        <span>aug</span>
+                                <!-- Social Media Profiles Ends -->
+                            </div>
+                            <!-- Contact Infos Ends -->
+                            <!-- Contact Form Starts -->
+                            <div class="col-12 col-md-8 col-xl-8 rightside">
+                                <p>
+                                    {{$settings[0]->description_contact}}
+                                </p>
+                                <form id="create-form" class="contactform" >
+                                    <div class="row">
+                                        <!-- Name Field Starts -->
+                                        <div class="form-group col-xl-6"> <i class="fa fa-user prefix"></i>
+                                            <input id="name"  type="text" class="form-control" placeholder="{{__('cp.your_name')}}" required>
+                                        </div>
+                                        <!-- Name Field Ends -->
+                                        <!-- Email Field Starts -->
+                                        <div class="form-group col-xl-6"> <i class="fa fa-envelope prefix"></i>
+                                            <input id="email" type="email" class="form-control" placeholder="{{__('cp.your_email')}}"  required>
+                                        </div>
+                                        <!-- Email Field Ends -->
+                                        <!-- Comment Textarea Starts -->
+                                        <div class="form-group col-xl-12"> <i class="fa fa-messages prefix"></i>
+                                            <textarea id="message" class="form-control" placeholder="{{__('cp.your_message')}}"  required></textarea>
+                                        </div>
+                                        <!-- Comment Textarea Ends -->
                                     </div>
-                                </figure>
-                                <!-- Figure Ends -->
-                                <a href="blog-post.html">
-                                    <h4>Effective Marketing Strategy tips</h4>
-                                </a>
-                                <!-- Excerpt Starts -->
-                                <div class="blog-excerpt">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit massa vel mauris Lorem ...</p>
-                                    <a href="blog-post.html" class="btn readmore"><span>Read more</span></a>
-                                </div>
-                                <!-- Excerpt Ends -->
-                            </article>
-                        </div>
-                        <!-- Article Ends -->
-                        <!-- Article Starts -->
-                        <div class="col-12 col-sm-6">
-                            <article>
-                                <!-- Figure Starts -->
-                                <figure class="blog-figure">
-                                    <a href="blog-post.html">
-                                        <img class="img-fluid" src="img/blog/blog-post-3.jpg" alt="">
-                                    </a>
-                                    <div class="post-date"> <span>01</span>
-                                        <span>mar</span>
+                                    <!-- Submit Form Button Starts -->
+                                    <div class="submit-form">
+                                            {{-- <button class="btn button-animated" type="submit" name="send"><span><i class="fa fa-send"></i> Send Message</span></button> --}}
+                                        {{-- <input  type="button" name="send"><span><i class="fa fa-send" onclick="performStore()"></i> Send Message</span></button> --}}
+                                        <button  onclick="performStore()" class="btn button-animated" name="send"><span><i class="fa fa-send" ></i> {{__('cp.send_message')}} </span></button>
                                     </div>
-                                </figure>
-                                <!-- Figure Ends -->
-                                <a href="blog-post.html">
-                                    <h4>free psd and sketch ressouces</h4>
-                                </a>
-                                <!-- Excerpt Starts -->
-                                <div class="blog-excerpt">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit massa vel mauris Lorem ...</p>
-                                    <a href="blog-post.html" class="btn readmore"><span>Read more</span></a>
-                                </div>
-                                <!-- Excerpt Ends -->
-                            </article>
+                                    <!-- Submit Form Button Ends -->
+                                    {{-- <div class="form-message"> <span class="output_message text-center font-weight-600 uppercase"></span>
+                                    </div> --}}
+                                </form>
+                            </div>
+                            <!-- Contact Form Ends -->
+
                         </div>
-                        <!-- Article Ends -->
-                        <!-- Article Starts -->
-                        <div class="col-12 col-sm-6">
-                            <article>
-                                <!-- Figure Starts -->
-                                <figure class="blog-figure">
-                                    <a href="blog-post.html">
-                                        <img class="img-fluid" src="img/blog/blog-post-2.jpg" alt="">
-                                    </a>
-                                    <div class="post-date"> <span>01</span>
-                                        <span>mar</span>
-                                    </div>
-                                </figure>
-                                <!-- Figure Ends -->
-                                <a href="blog-post.html">
-                                    <h4>How to become a successful freelancer</h4>
-                                </a>
-                                <!-- Excerpt Starts -->
-                                <div class="blog-excerpt">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit massa vel mauris Lorem ...</p>
-                                    <a href="blog-post.html" class="btn readmore"><span>Read more</span></a>
-                                </div>
-                                <!-- Excerpt Ends -->
-                            </article>
-                        </div>
-                        <!-- Article Ends -->
-                        <!-- Link To Blog Starts -->
-                        <div class="col-12 col-sm-12 col-md-12 col-xl-12 col-lg-12 allposts"> <a href="blog.html" class="btn btn-secondary"><span><i class="fa fa-comments"></i>All posts</span></a>
-                        </div>
-                        <!-- Link To Blog Ends -->
                     </div>
                 </div>
             </section>
