@@ -73,15 +73,20 @@ style="direction: {{App::isLocale('en') ? 'ltr' : 'rtl'}};">
 			<a class="cd-nav-trigger" href="#0">
 				<span aria-hidden="true"></span>
 			</a>
+		
 			<ul class="stretchy-nav">
 				<li class="active"><a class="home" href="#home"><span>{{__('cp.home')}}</span></a></li>
 				<li><a href="#about"><span>{{__('cp.about')}}</span></a></li>
 				<li><a href="#works"><span>{{__('cp.portfolio')}}</span></a></li>
 				<li><a href="#contact"><span>{{__('cp.contact')}}</span></a></li>
+                <li><a href="{{App::isLocale('en') ? LaravelLocalization::getLocalizedURL('ar') : LaravelLocalization::getNonLocalizedURL('en/en/portfolio-project')}}" class="page-scroll">{{App::isLocale('en') ? 'العربية' : 'الانجليزية'}}</a></li>
+
 				{{-- <li><a href="#works"><span>{{__('cp.portfolio')}}</span></a></li> --}}
 			</ul>
 			<span aria-hidden="true" class="stretchy-nav-bg"></span>
+			
 		</div>
+
 		<!-- Stretchy Navigation Ends -->
     </header>
     <!-- Header Ends -->
