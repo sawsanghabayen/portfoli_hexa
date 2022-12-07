@@ -67,7 +67,7 @@
                                         <div class="form-group">
                                             <label>{{__('cp.company_name_'.$locale->lang)}}</label>
                                             <input required type="text" class="form-control" id="company_name"  name="company_name_{{$locale->lang}}"
-                                            placeholder="Enter company_name" value="{{old('company_name_'.$locale->lang)}}"/>
+                                            placeholder=" {{__('cp.company_name_'.$locale->lang)}}" value="{{old('company_name_'.$locale->lang)}}"/>
                                         <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.company_name_'.$locale->lang)}} </span>
                                         </div>
                                     </div>
@@ -88,7 +88,7 @@
                                         <div class="form-group">
                                             <label>{{__('cp.education_name_'.$locale->lang)}}</label>
                                             <input required type="text" class="form-control" id="education_name"  name="education_name_{{$locale->lang}}"
-                                            placeholder="Enter education_name" value="{{old('education_name_'.$locale->lang)}}"/>
+                                            placeholder=" {{__('cp.education_name_ء'.$locale->lang)}}" value="{{old('education_name_'.$locale->lang)}}"/>
                                         <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.education_name_'.$locale->lang)}} </span>
                                         </div>
                                     </div>

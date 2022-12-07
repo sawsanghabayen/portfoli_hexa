@@ -14,7 +14,7 @@
             <!--begin::Info-->
             <div class="d-flex align-items-center flex-wrap mr-1">
                 <div class="d-flex align-items-baseline mr-5">
-                    <h3>{{__('cp.add_skill')}}</h3>
+                    <h3>{{__('cp.edit_skill')}}</h3>
                 </div>
             </div>
             <!--end::Info-->

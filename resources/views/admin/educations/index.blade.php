@@ -159,8 +159,8 @@
 
 @section('js')
 <script src="{{asset('js/axios.js')}}"></script>
-<script src="{{asset('controlPanel/assets/js/pages/features/miscellaneous/toastr.js')}}"></script>
-<script src="{{asset('controlPanel/assets/js/pages/features/miscellaneous/sweetalert2.js')}}"></script>
+<script src="{{asset('assets/js/pages/features/miscellaneous/toastr.js')}}"></script>
+<script src="{{asset('assets/js/pages/features/miscellaneous/sweetalert2.js')}}"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 {{-- <script src="{{asset('controlPanel/assets/js/pages/widgets.js')}}"></script> --}}

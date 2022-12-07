@@ -219,7 +219,7 @@
                                         </a>
                                     </li>
 										<li class="menu-section">
-								<h4 class="menu-text">Client Services</h4>
+								<h4 class="menu-text"> {{__('cp.client_services')}}</h4>
 								<i class="menu-icon ki ki-bold-more-hor icon-md"></i>
 							</li>
 
@@ -242,10 +242,9 @@
                                         </a>
                                     </li>
 
-
-                                {{-- @endif --}}
+				
 								<li class="menu-section">
-									<h4 class="menu-text">PortFolio Management</h4>
+									<h4 class="menu-text"> {{__('cp.portfolio_managment')}}</h4>
 									<i class="menu-icon ki ki-bold-more-hor icon-md"></i>
 								</li>
 
@@ -316,7 +315,7 @@
                                     </li>
 
 									<li class="menu-section">
-										<h4 class="menu-text">Account Management</h4>
+										<h4 class="menu-text"> {{__('cp.account_managment')}}</h4>
 										<i class="menu-icon ki ki-bold-more-hor icon-md"></i>
 									</li>
                                     <li class="menu-item" aria-haspopup="true">
@@ -332,7 +331,7 @@
 												</svg>
 												<!--end::Svg Icon-->
 											</span>
-                                            <span class="menu-text">{{__('cp.Basic_info')}}</span>
+                                            <span class="menu-text">{{__('cp.basic_info')}}</span>
                                         </a>
                                     </li>
 
@@ -341,7 +340,7 @@
                                 {{-- @if(can(['settings-show'  , 'settings-edit'])) --}}
 
 								<li class="menu-section">
-									<h4 class="menu-text">Settings</h4>
+									<h4 class="menu-text"> {{__('cp.settings')}}</h4>
 									<i class="menu-icon ki ki-bold-more-hor icon-md"></i>
 								</li>
                                     <li class="menu-item menu-item-submenu" aria-haspopup="true"

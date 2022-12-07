@@ -58,7 +58,7 @@
                                             {{($locale->lang == 'ar') ? 'dir=rtl' :'' }} type="text" class="form-control" id="f_name" name="f_name_{{$locale->lang}}"
                                             value="{{old('f_name_'.$locale->lang,@$info->translate($locale->lang)->f_name)}}"
                                                 placeholder="Enter full f_name" />
-                                            <span class="form-text text-muted">{{__('cms.please_enter')}} {{__('cms.f_name')}}</span>
+                                            <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.f_name')}}</span>
                                         </div>
                                     </div>
                                 @endforeach
@@ -72,7 +72,7 @@
                                             {{($locale->lang == 'ar') ? 'dir=rtl' :'' }} type="text" class="form-control" id="l_name" name="l_name_{{$locale->lang}}"
                                             value="{{old('l_name_'.$locale->lang,@$info->translate($locale->lang)->l_name)}}"
                                                 placeholder="Enter full l_name" />
-                                            <span class="form-text text-muted">{{__('cms.please_enter')}} {{__('cms.l_name')}}</span>
+                                            <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.l_name')}}</span>
                                         </div>
                                     </div>
                                 @endforeach
@@ -87,7 +87,7 @@
                                             {{($locale->lang == 'ar') ? 'dir=rtl' :'' }} type="text" class="form-control" id="job" name="job_{{$locale->lang}}"
                                             value="{{old('job_'.$locale->lang,@$info->translate($locale->lang)->job)}}"
                                                 placeholder="Enter full job" />
-                                            <span class="form-text text-muted">{{__('cms.please_enter')}} {{__('cms.job')}}</span>
+                                            <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.job')}}</span>
                                         </div>
                                     </div>
                                 @endforeach
@@ -101,7 +101,7 @@
                                             {{($locale->lang == 'ar') ? 'dir=rtl' :'' }} type="text" class="form-control" id="location" name="location_{{$locale->lang}}"
                                             value="{{old('location_'.$locale->lang,@$info->translate($locale->lang)->location)}}"
                                                 placeholder="Enter full location" />
-                                            <span class="form-text text-muted">{{__('cms.please_enter')}} {{__('cms.location')}}</span>
+                                            <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.location')}}</span>
                                         </div>
                                     </div>
                                 @endforeach
@@ -109,86 +109,86 @@
               
                            
                             <div class="form-group row mt-4">
-                                <label class="col-3 col-form-label">{{__('cms.birthdate')}}:</label>
+                                <label class="col-3 col-form-label">{{__('cp.birthdate')}}:</label>
                                 <div class="col-9">
                                     <input type="date" class="form-control" id="birthdate" name="birthdate" value="{{$info->birthdate}}"
                                         placeholder="Enter birthdate" />
-                                    <span class="form-text text-muted">{{__('cms.please_enter')}} {{__('cms.birthdate')}}</span>
+                                    <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.birthdate')}}</span>
                                 </div>
                             </div>
                             <div class="form-group row mt-4">
-                                <label class="col-3 col-form-label">{{__('cms.mobile')}}:</label>
+                                <label class="col-3 col-form-label">{{__('cp.mobile')}}:</label>
                                 <div class="col-9">
                                     <input type="text" class="form-control" id="mobile" name="mobile" value="{{$info->mobile}}"
                                         placeholder="Enter user name" />
-                                    <span class="form-text text-muted">{{__('cms.please_enter')}} {{__('cms.mobile')}}</span>
+                                    <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.mobile')}}</span>
                                 </div>
                             </div>
                             <div class="form-group row mt-4">
-                                <label class="col-3 col-form-label">{{__('cms.nationality')}}:</label>
+                                <label class="col-3 col-form-label">{{__('cp.nationality')}}:</label>
                                 <div class="col-9">
                                     <input type="text" class="form-control" id="nationality" name="nationality" value="{{$info->nationality}}"
                                         placeholder="Enter nationality " />
-                                    <span class="form-text text-muted">{{__('cms.please_enter')}} {{__('cms.nationality')}}</span>
+                                    <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.nationality')}}</span>
                                 </div>
                             </div>
         
                             <div class="form-group row mt-4">
-                                <label class="col-3 col-form-label">{{__('cms.experience')}}:</label>
+                                <label class="col-3 col-form-label">{{__('cp.experience')}}:</label>
                                 <div class="col-9">
                                     <input type="text" class="form-control" id="experience" name="experience" value="{{$info->experience}}"
                                         placeholder="Enter experience " />
-                                    <span class="form-text text-muted">{{__('cms.please_enter')}} {{__('cms.experience')}}</span>
+                                    <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.experience')}}</span>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-3 col-form-label">{{__('cms.email')}}:</label>
+                                <label class="col-3 col-form-label">{{__('cp.email')}}:</label>
                                 <div class="col-9">
                                     <input type="email" class="form-control" id="email"  name="email" value="{{$info->email}}"
                                         placeholder="Enter email" />
-                                    <span class="form-text text-muted">{{__('cms.please_enter')}} {{__('cms.email')}}</span>
+                                    <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.email')}}</span>
                                 </div>
                             </div>
                             <div class="form-group row mt-4">
-                                <label class="col-3 col-form-label">{{__('cms.facebook_url')}}:</label>
+                                <label class="col-3 col-form-label">{{__('cp.facebook_url')}}:</label>
                                 <div class="col-9">
                                     <input type="text" class="form-control" id="facebook_url" name="facebook_url" value="{{$info->facebook_url}}"
                                         placeholder="Enter facebook_url" />
-                                    <span class="form-text text-muted">{{__('cms.please_enter')}} {{__('cms.facebook_url')}}</span>
+                                    <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.facebook_url')}}</span>
                                 </div>
                             </div>    <div class="form-group row mt-4">
-                                <label class="col-3 col-form-label">{{__('cms.youtube_url')}}:</label>
+                                <label class="col-3 col-form-label">{{__('cp.youtube_url')}}:</label>
                                 <div class="col-9">
                                     <input type="text" class="form-control" id="youtube_url" name="youtube_url" value="{{$info->youtube_url}}"
                                         placeholder="Enter youtube_url" />
-                                    <span class="form-text text-muted">{{__('cms.please_enter')}} {{__('cms.youtube_url')}}</span>
+                                    <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.youtube_url')}}</span>
                                 </div>
                             </div>    <div class="form-group row mt-4">
-                                <label class="col-3 col-form-label">{{__('cms.twitter_url')}}:</label>
+                                <label class="col-3 col-form-label">{{__('cp.twitter_url')}}:</label>
                                 <div class="col-9">
                                     <input type="text" class="form-control" id="twitter_url" name="twitter_url" value="{{$info->twitter_url}}"
                                         placeholder="Enter twitter_url" />
-                                    <span class="form-text text-muted">{{__('cms.please_enter')}} {{__('cms.twitter_url')}}</span>
+                                    <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.twitter_url')}}</span>
                                 </div>
                             </div>    
                             <div class="form-group row mt-4">
-                                <label class="col-3 col-form-label">{{__('cms.skybe_url')}}:</label>
+                                <label class="col-3 col-form-label">{{__('cp.skybe_url')}}:</label>
                                 <div class="col-9">
                                     <input type="text" class="form-control" id="skybe" name="skybe" value="{{$info->skybe}}"
                                         placeholder="Enter skybe" />
-                                    <span class="form-text text-muted">{{__('cms.please_enter')}} {{__('cms.skybe')}}</span>
+                                    <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.skybe')}}</span>
                                 </div>
                             </div>
                             <div class="form-group row mt-4">
-                                <label class="col-3 col-form-label">{{__('cms.dribbble')}}:</label>
+                                <label class="col-3 col-form-label">{{__('cp.dribbble')}}:</label>
                                 <div class="col-9">
                                     <input type="text" class="form-control" id="dribbble" name="dribbble" value="{{$info->dribbble}}"
                                         placeholder="Enter dribbble" />
-                                    <span class="form-text text-muted">{{__('cms.please_enter')}} {{__('cms.dribbble')}}</span>
+                                    <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.dribbble')}}</span>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-3 col-form-label">{{__('cms.freelance_status')}}</label>
+                                <label class="col-3 col-form-label">{{__('cp.freelance_status')}}</label>
                                 <div class="col-3">
                                     <span class="switch switch-outline switch-icon switch-success">
                                         <label>
@@ -200,7 +200,7 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-3 col-form-label" >Select Languages :</label><br/>
+                                <label class="col-3 col-form-label" > {{__('cp.select_languages')}} :</label><br/>
                                 <div class="col-lg-4 col-md-9 col-sm-12">
                                     <div class="dropdown bootstrap-select form-control dropup">
                                 <select class="form-control selectpicker" name="languages[]" data-size="7" multiple data-live-search="true" id ='languages'>
@@ -216,12 +216,12 @@
                                   
                                 </select>
                             </div>
-                            <span class="form-text text-muted">Please select Languages</span>
+                            <span class="form-text text-muted">{{__('cp.please')}} {{__('cp.select_languages')}}</span>
                         </div>
                             </div>
         
                             <div class="form-group row">
-                                <label class="col-3 col-form-label">{{__('cms.image')}}:</label>
+                                <label class="col-3 col-form-label">{{__('cp.image')}}:</label>
 
                                 <div class="card-body">
                                     <div class="form-group">
@@ -273,7 +273,7 @@
                             </div>
         
                         <div id ="cv_div" class="form-group row">
-                                <label class="col-3 col-form-label">CV:</label>
+                                <label class="col-3 col-form-label">{{__('cp.cv')}}</label>
         
                                 <input id= "cv" name="cv" type="file" class="form-control"><br/>
                                 <div class="progress">

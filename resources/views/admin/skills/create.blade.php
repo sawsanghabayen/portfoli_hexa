@@ -51,7 +51,7 @@
                                             <label>{{__('cp.title_'.$locale->lang)}}</label>
                                             <input required 
                                             {{($locale->lang == 'ar') ? 'dir=rtl' :'' }} type="text" class="form-control" id="title"  name="title_{{$locale->lang}}"
-                                            placeholder="Enter title" value="{{old('title_'.$locale->lang)}}"/>
+                                            placeholder=" {{__('cp.title_'.$locale->lang)}}" value="{{old('title_'.$locale->lang)}}"/>
                                         <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.title_'.$locale->lang)}} </span>
                                         </div>
                                     </div>
@@ -62,7 +62,7 @@
                                 <label class="col-3 col-form-label">{{__('cp.degree')}}:</label>
                                 <div class="col-9">
                                     <input type="number" class="form-control" name="degree" 
-                                        placeholder="Enter degree" />
+                                        placeholder="{{__('cp.enter_degree')}}" />
                                     <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.degree')}}</span>
                                 </div>
                             </div>

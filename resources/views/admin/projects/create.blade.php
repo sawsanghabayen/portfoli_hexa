@@ -55,14 +55,38 @@
                                             title="Choose one of the following..." tabindex="null" data-live-search="true">
                                             {{-- <option  value="-1">Select Category</option> --}}
                                             {{-- @foreach ($categories as $category) --}}
-                                            <option value="1">IMAGE FORMATE</option>
-                                            <option value="2">VIDEO FORMATE</option>
-                                            <option value="3">SLIDER FORMATE</option>
-                                            <option value="4">YOUTUBE FORMATE</option>
+                                            <option value="1"> 
+                                                 @if (getLocal() =='en')
+                                                 IMAGE FORMATE 
+                                                @elseif (getLocal() =='ar')
+                                                فئة الصورة 
+                                                @endif
+                                            </option>
+                                            <option value="2">
+                                                 @if (getLocal() =='en')
+                                                VIDEO FORMATE 
+                                               @elseif (getLocal() =='ar')
+                                               فئة الفيديو 
+                                               @endif
+                                            </option>
+                                            <option value="3">
+                                                @if (getLocal() =='en')
+                                                SLIDER FORMATE 
+                                               @elseif (getLocal() =='ar')
+                                               فئة السلايدر 
+                                               @endif
+                                            </option>
+                                            <option value="4">
+                                                @if (getLocal() =='en')
+                                                YOUTUBE FORMATE 
+                                               @elseif (getLocal() =='ar')
+                                               فئة اليوتيوب 
+                                               @endif
+                                            </option>
                                             {{-- @endforeach --}}
                                         </select>
                                     </div>
-                                    <span class="form-text text-muted">Please select category</span>
+                                    <span class="form-text text-muted"> {{__('cp.please')}}  {{__('cp.select_cataegory')}}</span>
                                 </div>
                             </div>
                             <div class="row">

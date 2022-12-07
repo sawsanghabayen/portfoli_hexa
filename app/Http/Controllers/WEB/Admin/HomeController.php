@@ -16,23 +16,20 @@ class HomeController extends Controller
     public function index()
     {
         $admins_count =Admin::count();
-        $vendors_count =Subadmin::count();
-        $sales_from_all_vendors_in_this_day = Order::whereDate('created_at', Carbon::today())->where('status','4')->sum('total');
-        $orders_from_all_vendors_in_this_day = Order::whereDate('created_at', Carbon::today())->count();
-        $avg_from_all_vendors = round(Order::where('status','!=','5')->average('total'),2);
-        $total_sales_from_all_vendors = Order::where('status','!=','5')->sum('total');
-        $total_orders_from_all_vendors = Order::count();
-        $confirmed_orders = Order::where('status','1')->count();
-        $under_preparing_orders = Order::where('status','2')->count();
-        $ready_to_pick_orders = Order::where('status','3')->count();
-        $completed_orders = Order::where('status','4')->count();
-        $canceled_orders = Order::where('status','5')->count();
+        // $vendors_count =Subadmin::count();
+        // $sales_from_all_vendors_in_this_day = Order::whereDate('created_at', Carbon::today())->where('status','4')->sum('total');
+        // $orders_from_all_vendors_in_this_day = Order::whereDate('created_at', Carbon::today())->count();
+        // $avg_from_all_vendors = round(Order::where('status','!=','5')->average('total'),2);
+        // $total_sales_from_all_vendors = Order::where('status','!=','5')->sum('total');
+        // $total_orders_from_all_vendors = Order::count();
+        // $confirmed_orders = Order::where('status','1')->count();
+        // $under_preparing_orders = Order::where('status','2')->count();
+        // $ready_to_pick_orders = Order::where('status','3')->count();
+        // $completed_orders = Order::where('status','4')->count();
+        // $canceled_orders = Order::where('status','5')->count();
 
 
-        return view('admin.home.dashboard')->with(compact('admins_count',
-            'vendors_count','sales_from_all_vendors_in_this_day','orders_from_all_vendors_in_this_day'
-        ,'avg_from_all_vendors','total_sales_from_all_vendors','total_orders_from_all_vendors'
-        ,'confirmed_orders','under_preparing_orders','ready_to_pick_orders','completed_orders','canceled_orders'));
+        return view('admin.home.dashboard')->with(compact('admins_count'));
     }
 
 

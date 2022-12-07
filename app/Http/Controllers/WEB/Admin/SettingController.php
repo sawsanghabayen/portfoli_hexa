@@ -46,51 +46,6 @@ class SettingController extends Controller
     public function store(Request $request)
     {
 
-        $roles = [
-            'image' => 'required|image|mimes:jpeg,jpg,png,gif',
-        ];
-        $locales = Language::all()->pluck('lang');
-        foreach ($locales as $locale) {
-            $roles['description_home_' . $locale] = 'required';
-        }
-        foreach ($locales as $locale) {
-            $roles['description_contact_' . $locale] = 'required';
-        }
-        foreach ($locales as $locale) {
-            $roles['description_about_' . $locale] = 'required';
-        }
-        foreach ($locales as $locale) {
-            $roles['description_portfolio_' . $locale] = 'required';
-        }
-        $this->validate($request, $roles);
-
-        $item= new Setting();
-        if ($request->hasFile('image')) {
-            $item->background_img =  $this->storeImage( $request->file('image'), 'settings',null,512);
-        }
-        // $item->user_id = $request->user_id;
-        // $item->sort_order = $request->sort_order;
-
-        foreach ($locales as $locale)
-        {
-            $item->translateOrNew($locale)->description_home = $request->get('description_home_' . $locale);
-        }
-        foreach ($locales as $locale)
-        {
-            $item->translateOrNew($locale)->description_contact = $request->get('description_contact_' . $locale);
-        }
-        foreach ($locales as $locale)
-        {
-            $item->translateOrNew($locale)->description_about = $request->get('description_about_' . $locale);
-        }
-        foreach ($locales as $locale)
-        {
-            $item->translateOrNew($locale)->description_portfolio = $request->get('description_portfolio_' . $locale);
-        }
-
-        $item->save();
-        // activity($item->name)->causedBy(auth('admin')->user())->log(' إضافة تصنيف جديد ');
-        return redirect()->back()->with('status', __('cp.create'));
 
     }
 
@@ -134,7 +89,7 @@ class SettingController extends Controller
     {
         // dd(11);
         $roles = [
-            'image' => 'required|image|mimes:jpeg,jpg,png,gif',
+            // 'image' => 'required|image|mimes:jpeg,jpg,png,gif',
         ];
         $locales = Language::all()->pluck('lang');
         foreach ($locales as $locale) {

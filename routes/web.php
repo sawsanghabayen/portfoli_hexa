@@ -11,6 +11,7 @@
 |
 */
 
+use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\HomeController;
 // use App\Http\Controllers\InfoController;
 use WEB\Admin\SettingController;
@@ -195,7 +196,11 @@ Route::get('/cv',[ App\Http\Controllers\InfoController::class,'downloadCv'])->na
         Route::resource('infos', InfoController::class);
         Route::get('/messages', [App\Http\Controllers\MessageController::class ,'index'])->name('messages.index');
         Route::delete('/messages/{id}', [App\Http\Controllers\MessageController::class ,'destroy'])->name('messages.delete');
-
+        Route::get('profile/personal', [AuthController::class, 'profilePersonalInformation'])->name('admin.profile.personal-information');
+    
+        Route::put('profile/personal', [AuthController::class, 'updateProfilePersonalInformation'])->name('admin.profile.update-personal-information');
+        
+        Route::get('profile/account', [AuthController::class, 'profileAccountInformatiion'])->name('admin.profile.account-information');
         // Route::get('/settings', 'WEB\Admin\SettingController@index');
         // Route::get('/settings/create', 'WEB\Admin\SettingController@create');
         // Route::post('/settings', 'WEB\Admin\SettingController@store');

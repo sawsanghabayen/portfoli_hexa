@@ -287,6 +287,8 @@ return [
     'refund_success'=>'Refund Successfully',
     'refund_error'=>'Refund Error',
 
+    'admins_count'=>'Admins Count',
+
     'add_education'=>'Add Education ',
     'educations'=>'Educations',
 
@@ -300,9 +302,157 @@ return [
     'company_name'=>'Company Name',
     'company_name_ar'=>'Company Name In Arabic',
 
-    'start_date'=>' Start Date ',
-    'end_date'=>' End Date ',
+    'experience_name'=>'Experience Name In English',
+    'experience_name_en'=>' Experience Name In English',
+    'experience_name_ar'=>'Experience Name In English ',
+
+    'start_date'=>' Start Date',
+    'end_date'=>' End Date',
     'please_enter'=>' Please Enter',
+
+
+
+    'messages'=>'Messages',
+    'manage'=>'Manage',
+    'send_date'=>'Send Date',
+
+    'projects'=>'Projects',
+    'video'=>'Video',
+    'slider_image'=>'Slider Image',
+    'youtube_url'=>'Youtube URL',
+    'facebook_url'=>'Facebook URL',
+    'twitter_url'=>'Twitter URL',
+    'skybe_url'=>'Skybe URL',
+    'github_url'=>'Github URL',
+  
+    'experiences'=>'Experiences',
+    'experience_name'=>'Experience Name',
+
+
+    'edit_info'=>'Edit Info',
+    'basic_info'=>'Basic Info',
+    'f_name'=>'First Name',
+    'f_name_en'=>'First Name In English',
+    'f_name_ar'=>'First Name In Arabic',
+    'l_name'=>'Last Name',
+    'l_name_en'=>'Last Name In English',
+    'l_name_ar'=>'Last Name In Arabic',
+    'job'=>'Job',
+    'job_en'=>'Job In English',
+    'job_ar'=>'Job In Arabic',
+    'location'=>'Location',
+    'location_en'=>'Location In English',
+    'location_ar'=>'Location In Arabic',
+    'freelance_status'=>'Freelance Status',
+    'please'=>'Please',
+    'select_languages'=>'Select Languages',
+    'cv'=>'CV',
+
+
+
+    'hr'=>'HUMAN RESOURCES',
+    'client_services'=>'CLIENT SERVICES',
+    'portfolio_managment'=>'PORTFOLIO MANAGMENT',
+    'account_managment'=>'ACCOUNT MANAGMENT',
+
+
+
+
+    'main_setting'=>'Main Setting',
+    'description_home'=>'Description Home',
+    'description_home_en'=>'Description Home In English',
+    'description_home_ar'=>'Description Home In Arabic',
+
+    'description_contact'=>'Description Contact',
+    'description_contact_en'=>'Description Contact In English',
+    'description_contact_ar'=>'Description Contact In Arabic',
+
+    'description_portfolio'=>'Description Portfolio',
+    'description_portfolio_en'=>'Description Portfolio In English',
+    'description_portfolio_ar'=>'Description Portfolio In Arabic',
+    'description_about'=>'Description About',
+    'description_about_en'=>'Description About In English',
+    'description_about_ar'=>'Description About In Arabic',
+
+    'add_skill'=>'Add Skill',
+    'edit_skill'=>'Edit Skill',
+    'degree'=>'Degree',
+    'enter_degree'=>'Enter Degree',
+    'enter_title_en'=>'Enter title In English',
+    'enter_title_ar'=>'Enter title In Arabic',
+    'select_cataegory'=>'Select Category',
+
+
+
+
+
+
+
+
+    // FRONT WEBSITE
+    'title_home'=>'HI THERE',
+   'home'=>'HOME',
+
+    'im'=>"I'M",
+    'more_about_me'=>'MORE ABOUT ME',
+    'about'=>'ABOUT',
+    'me'=>'ME',
+    'my'=>'MY',
+     // PROJECTS SECTION
+
+   'portfolio'=>'PORTFOLIO',
+   'project'=>'PROJECT',
+   'client'=>'CLIENT',
+   'budget'=>'BUDGET',
+   'duration'=>'DURATION',
+   'technologies'=>'TECHNOLOGIES',
+   'preview'=>'PREVIEW',
+   'close'=>'CLOSE',
+   'months'=>'MONTHS',
+
+
+
+    // ABOUT SECTION
+
+    'f_name'=>'FIRST Name',
+    'l_name'=>'Last Name',
+    'birthdate'=>'Birthdate',
+    'nationality'=>'Nationality',
+    'experience'=>'Experience',
+    'address'=>'Address',
+    'Freelance'=>'Freelance',
+    'languages'=>'Languages',
+    'phone'=>'Phone',
+    'email'=>'Email',
+    'skype'=>'Skype',
+    'dribbble'=>'Dribbble',
+    'download'=>'DOWNLOAD MY CV',
+    'education'=>'EDUCATION',
+    'experience'=>'EXPERIENCE',
+    'skills'=>'SKILLS',
+    'skybe'=>'Skybe',
+
+
+    // CONTACT SECTION
+
+    'contact'=>'CONTACT',
+
+    'my_portfolio'=>'MY PORTFOLIO',
+    'get'=>'GET',
+    'in_touch'=>'IN TOUCH ',
+    'your_name'=>'YOUR NAME',
+    'your_email'=>'YOUR EMAIL',
+    'your_message'=>'YOUR MESSAGE',
+    'send_message'=>'SEND MESSAGE',
+    'latest'=>'LATEST',
+    'posts'=>'Posts',
+    'Social_profile'=>'SOCIAL PROFILE',
+   'get_in_touch'=>'GET IN TOUCH',
+
+
+
+
+
 
 
 

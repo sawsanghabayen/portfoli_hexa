@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{App::isLocale('en') ? 'en' : 'ar'}}" direction="{{App::isLocale('en') ? 'ltr' : 'rtl'}}"
+style="direction: {{App::isLocale('en') ? 'ltr' : 'rtl'}};">
 
 <head>
     <meta charset="utf-8">
@@ -37,28 +38,28 @@
 					<li class="active">
 						<div>
 							<a id="link-home" href="#home" class="active">
-								<i class="fa fa-home"></i><span>Home</span>
+								<i class="fa fa-home"></i><span>{{__('cp.home')}}</span>
 							</a>
 						</div>
 					</li>
 					<li>
 						<div>
 							<a id="link-about" href="#about">
-								<i class="fa fa-user"></i><span>About me</span>
+								<i class="fa fa-user"></i><span>{{__('cp.about')}} {{__('cp.me')}}</span>
 							</a>
 						</div>
 					</li>
 					<li>
 						<div>
 							<a id="link-work" href="#work">
-								<i class="fa fa-briefcase"></i><span>my Portfolio</span>
+								<i class="fa fa-briefcase"></i><span>{{__('cp.my')}} {{__('cp.portfolio')}}</span>
 							</a>
 						</div>
 					</li>
 					<li>
 						<div>
 							<a id="link-contact" href="#contact">
-								<i class="fa fa-envelope-open"></i><span>get in touch</span>
+								<i class="fa fa-envelope-open"></i><span>{{__('cp.get_in_touch')}} </span>
 							</a>
 						</div>
 					</li>
@@ -72,10 +73,10 @@
 				<span aria-hidden="true"></span>
 			</a>
 			<ul class="stretchy-nav">
-				<li class="active"><a class="home" href="#home"><span>Home</span></a></li>
-				<li><a href="#about"><span>About</span></a></li>
-				<li><a href="#works"><span>Portfolio</span></a></li>
-				<li><a href="#contact"><span>Contact</span></a></li>
+				<li class="active"><a class="home" href="#home"><span>{{__('cp.home')}}</span></a></li>
+				<li><a href="#about"><span>{{__('cp.about')}}</span></a></li>
+				<li><a href="#works"><span>{{__('cp.portfolio')}}</span></a></li>
+				<li><a href="#contact"><span>{{__('cp.contact')}}</span></a></li>
 			</ul>
 			<span aria-hidden="true" class="stretchy-nav-bg"></span>
 		</div>
@@ -92,9 +93,9 @@
                 <!-- Text Rotator Starts -->
                 <div class="main-text-container">
                     <div class="main-text" id="selector">
-                        <h3>Hi there ! </h3>
+                        <h3>{{__('cp.title_home')}} ! </h3>
                         <h1 class="ah-headline">
-					       I'm
+                            {{__('cp.im')}}
 						  <span class="ah-words-wrapper">
 							<b class="is-visible">{{$infos[0]->f_name}} {{$infos[0]->l_name}}</b>
 							<b>{{$infos[0]->job}}</b>
@@ -102,13 +103,11 @@
 							<b>a freelancer</b> --}}
 						  </span>
 					    </h1>
-                        <p>Seasoned and independent Front End Developer with 8 years of experience in blending the art of design with skill of programming to deliver an immersive and engaging user experience through efficient website development, proactive feature optimization, and relentless debugging.
-<br />
-Very passionate about aesthetics and UI design.</p>
+                        <p>{{$settings[0]->description_home}}</p>
                         <div class="call-to-actions-home">
                             <div class="text-left">
-                                <a href="#about" class="btn link-portfolio-one"><span><i class="fa fa-user"></i>more about me</span></a>
-                                <a href="#work" class="btn btn-secondary link-portfolio-two"><span><i class="fa fa-suitcase"></i>portfolio</span></a>
+                                <a href="#about" class="btn link-portfolio-one"><span><i class="fa fa-user"></i>{{__('cp.more_about_me')}}</span></a>
+                                <a href="#work" class="btn btn-secondary link-portfolio-two"><span><i class="fa fa-suitcase"></i>{{__('cp.portfolio')}}</span></a>
                             </div>
                         </div>
                     </div>
@@ -120,7 +119,7 @@ Very passionate about aesthetics and UI design.</p>
             <section id="about">
                 <!-- Main Heading Starts -->
                 <div class="container page-title text-center">
-                    <h2 class="text-center">about <span>me</span></h2>
+                    <h2 class="text-center">{{__('cp.about')}} <span>{{__('cp.me')}}</span></h2>
                     <span class="title-head-subtitle">{{$settings[0]->description_about}}</span>
                 </div>
                 <!-- Main Heading Ends -->
@@ -131,38 +130,38 @@ Very passionate about aesthetics and UI design.</p>
 							<div class="image-container">
 								<img class="img-fluid d-block" src="{{$infos[0]->image ?? ''}}"  alt="" />
 							</div>
-							<p  class="d-block d-md-none">I'm a Freelance UI/UX Designer and Developer based in London, England. I strives to build immersive and beautiful web applications through carefully crafted code and user-centric design.</p>
+							{{-- <p  class="d-block d-md-none">I'm a Freelance UI/UX Designer and Developer based in London, England. I strives to build immersive and beautiful web applications through carefully crafted code and user-centric design.</p> --}}
 						</div>
 						<div class="row col-xl-6 col-lg-6 col-md-12">
 							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
 								<ul class="list-1">
 									<li>
-										<h6><span class="font-weight-600">First Name</span>{{$infos[0]->f_name}}</h6>
+										<h6><span class="font-weight-600">{{__('cp.f_name')}}</span>{{$infos[0]->f_name}}</h6>
 									</li>
 									<li>
-										<h6><span class="font-weight-600">Last Name</span>{{$infos[0]->f_name}}</h6>
+										<h6><span class="font-weight-600">{{__('cp.l_name')}}</span>{{$infos[0]->f_name}}</h6>
 									</li>
 									<li>
-										<h6><span class="font-weight-600">Birthdate</span>{{$infos[0]->birthdate}}</h6>
+										<h6><span class="font-weight-600">{{__('cp.birthdate')}}</span>{{$infos[0]->birthdate}}</h6>
 									</li>
 									<li>
-										<h6><span class="font-weight-600">Nationality</span>{{$infos[0]->nationality}}</h6>
+										<h6><span class="font-weight-600">{{__('cp.nationality')}}</span>{{$infos[0]->nationality}}</h6>
 									</li>
 									<li>
-										<h6><span class="font-weight-600">Experience</span>{{$infos[0]->experience}} years</h6>
+										<h6><span class="font-weight-600">{{__('cp.experience')}}</span>{{$infos[0]->experience}} years</h6>
 									</li>
 									<li>
-										<h6><span class="font-weight-600">Address</span>{{$infos[0]->location}}</h6>
+										<h6><span class="font-weight-600">{{__('cp.address')}}</span>{{$infos[0]->location}}</h6>
 									</li>
 								</ul>
 							</div>
 							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
 								<ul class="list-2">
 									<li>
-										<h6><span class="font-weight-600">Freelance</span>{{$infos[0]->active_status}}</h6>
+										<h6><span class="font-weight-600">{{__('cp.freelance')}}</span>{{$infos[0]->active_status}}</h6>
 									</li>
 									<li>
-										<h6><span class="font-weight-600">Langages</span> 
+										<h6><span class="font-weight-600">{{__('cp.languages')}}</span> 
                             {{-- @foreach ($langs_checked as $lang_checked) --}}
                                             
                                             {{-- {{$lang_checked->lang_name}} / --}}
@@ -181,21 +180,21 @@ Very passionate about aesthetics and UI design.</p>
                                         </h6>
 									</li>
 									<li>
-										<h6><span class="font-weight-600">Phone</span>{{$infos[0]->mobile}}</h6>
+										<h6><span class="font-weight-600">{{__('cp.phone')}}</span>{{$infos[0]->mobile}}</h6>
 									</li>
 									<li>
-										<h6><span class="font-weight-600">Email</span>{{$infos[0]->email}}</h6>
+										<h6><span class="font-weight-600">{{__('cp.email')}}</span>{{$infos[0]->email}}</h6>
 									</li>
 									<li>
-										<h6><span class="font-weight-600">Skype</span>{{$infos[0]->skybe}}</h6>
+										<h6><span class="font-weight-600">{{__('cp.skybe')}}</span>{{$infos[0]->skybe}}</h6>
 									</li>
 									<li>
-										<h6><span class="font-weight-600">Dribbble</span>{{$infos[0]->dribbble}}</h6>
+										<h6><span class="font-weight-600">{{__('cp.dribbble')}}</span>{{$infos[0]->dribbble}}</h6>
 									</li>
 								</ul>
 							</div>
 							<div class="col-12 resume-btn-container">
-								<a href="{{route('portfolio.cv')}}" class="btn btn-resume"><span><i class="fa fa-download"></i>download my cv</span></a>
+								<a href="{{route('portfolio.cv')}}" class="btn btn-resume"><span><i class="fa fa-download"></i>{{__('cp.download')}}</span></a>
 							</div>
 						</div>
                         <!-- Personal Infos Ends -->
@@ -212,7 +211,7 @@ Very passionate about aesthetics and UI design.</p>
                         <div class="row">
                             <!-- Experience Starts -->
                             <div class="col-xl-6 col-lg-6 col-md-6">
-                                <h2 class="font-weight-600 uppercase title-section">experience</h2>
+                                <h2 class="font-weight-600 uppercase title-section">{{__('cp.experience')}}</h2>
                                 <div class="resume-items">
                                     <!-- Item Starts -->
                             @foreach ($experiences as $experience)
@@ -223,7 +222,7 @@ Very passionate about aesthetics and UI design.</p>
                                             <div class="card-header">
                                                 <span class="year"><i class="fa fa-calendar"></i><i class="fa fa-caret-right"></i>{{$experience->start_date}} - {{$experience->end_date}} </span>
                                                 <span class="d-block font-weight-400 uppercase">
-												web designer 
+                                                    {{$experience->experience_name}} 
 												<span class="separator"></span>
                                                 <span class="font-weight-700">{{$experience->company_name}}</span>
                                                 </span>
@@ -242,7 +241,7 @@ Very passionate about aesthetics and UI design.</p>
                             <!-- Experience Ends -->
                             <!-- Education Starts -->
                             <div class="col-xl-6 col-lg-6 col-md-6 skills-container">
-                                <h2 class="font-weight-600 uppercase title-section">Education</h2>
+                                <h2 class="font-weight-600 uppercase title-section">{{__('cp.education')}}</h2>
                                 <div class="resume-items">
                                     <!-- Item Starts -->
                             @foreach ($educations as $education )
@@ -253,7 +252,7 @@ Very passionate about aesthetics and UI design.</p>
                                             <div class="card-header">
                                                 <span class="year"><i class="fa fa-calendar"></i><i class="fa fa-caret-right"></i>{{$education->start_date}} - {{$education->end_date}} </span>
                                                 <span class="d-block font-weight-400 uppercase">
-												Engineering Degree 
+                                                    {{$education->education_name}} 
 												<span class="separator"></span>
                                                 <span class="font-weight-700">{{$education->company_name}}</span>
                                                 </span>
@@ -274,7 +273,7 @@ Very passionate about aesthetics and UI design.</p>
                         <div class="row">
                             <!-- Skill Bar Starts -->
                             <div class="col-12">
-                                <h2 class="font-weight-600 uppercase title-section skills-title">skills</h2>
+                                <h2 class="font-weight-600 uppercase title-section skills-title">{{__('cp.skills')}}</h2>
                             </div>
 							<!-- Skill Bar Starts -->
 
@@ -306,7 +305,7 @@ Very passionate about aesthetics and UI design.</p>
                 <div class="portfolio-container">
                     <!-- Main Heading Starts -->
                     <div class="container page-title text-center">
-                        <h2 class="text-center">my <span>portfolio</span></h2>
+                        <h2 class="text-center">{{__('cp.my')}} <span>{{__('cp.portfolio')}}</span></h2>
 						<span class="title-head-subtitle">{{$settings[0]->description_portfolio}}</span>
                     </div>
                     <!-- Main Heading Ends -->
@@ -321,14 +320,36 @@ Very passionate about aesthetics and UI design.</p>
                                     <li class="col-12 col-md-6 col-lg-4">
                                         <a href="#0" data-type="project-{{$project->id}}">
                                             <img src="{{$project->image ?? ''}}" alt="Project" class="img-fluid">
-                                            <div><span> @if( $project->category_id == 1 )
+                                            <div><span> @if( $project->category_id == 1)
+                                                @if (getLocal() =='en')
                                                 IMAGE FORMATE 
+                                                @elseif (getLocal() =='ar')
+                                                فئة الصورة
+                                                @endif
+                                                    
                                                 @elseif( $project->category_id == 2 )
+                                                @if (getLocal() =='en')
                                                 VIDEO FORMATE 
+                                                @elseif (getLocal() =='ar')
+                                                فئة الفيديو 
+                                                @endif
+                                                    
+                                                
                                                 @elseif( $project->category_id == 3 )
-                                                SLIDER FORMATE 
+                                                
+                                                @if (getLocal() =='en')
+                                                SLIDER FORMATE  
+                                                @elseif (getLocal() =='ar')
+                                                فئة السلايدر 
+                                                @endif
+
                                                 @else
+                                                @if (getLocal() =='en')
                                                 YOUTUBE FORMATE 
+                                                @elseif (getLocal() =='ar')
+                                                فئة اليوتيوب 
+                                                @endif
+ 
                                                 @endif</span>
                                             </div>
                                         </a>
@@ -436,21 +457,21 @@ Very passionate about aesthetics and UI design.</p>
                             
                          </h3>
                             <ul class="project-details">
-                                <li><i class="fa fa-file-text-o"></i><span class="font-weight-400 project-label"> Project </span>: <span class="font-weight-600 uppercase">{{$project->name}}</span>
+                                <li><i class="fa fa-file-text-o"></i><span class="font-weight-400 project-label"> {{__('cp.project')}} </span>: <span class="font-weight-600 uppercase">{{$project->name}}</span>
                                 </li>
-                                <li><i class="fa fa-user-o"></i><span class="font-weight-400 project-label"> Client </span>: <span class="font-weight-600 uppercase">{{$project->client}}</span>
+                                <li><i class="fa fa-user-o"></i><span class="font-weight-400 project-label"> {{__('cp.client')}}  </span>: <span class="font-weight-600 uppercase">{{$project->client}}</span>
                                 </li>
-                                <li><i class="fa fa-hourglass-o"></i><span class="font-weight-400 project-label"> Duration </span>: <span class="font-weight-600 uppercase">{{$project->duration}} months</span>
+                                <li><i class="fa fa-hourglass-o"></i><span class="font-weight-400 project-label"> {{__('cp.duration')}}  </span>: <span class="font-weight-600 uppercase">{{$project->duration}} {{__('cp.months')}}</span>
                                 </li>
-                                <li><i class="fa fa-code"></i> <span class="font-weight-400 project-label"> Technologies</span> : <span class="font-weight-600 uppercase">{{$project->technologies}}</span>
+                                <li><i class="fa fa-code"></i> <span class="font-weight-400 project-label"> {{__('cp.technologies')}} </span> : <span class="font-weight-600 uppercase">{{$project->technologies}}</span>
                                 </li>
-                                <li><i class="fa fa-money"></i> <span class="font-weight-400 project-label"> Budget</span> : <span class="font-weight-600 uppercase">{{$project->budget}} USD</span>
+                                <li><i class="fa fa-money"></i> <span class="font-weight-400 project-label"> {{__('cp.budget')}} </span> : <span class="font-weight-600 uppercase">{{$project->budget}} USD</span>
                                 </li>
                             </ul>
-                            <a href="{{$project->url_website}}" class="btn"><span><i class="fa fa-external-link"></i>preview</span></a>
+                            <a href="{{$project->url_website}}" class="btn"><span><i class="fa fa-external-link"></i>{{__('cp.preview')}} </span></a>
                         </div>
                         <div class="col-6 p-none text-right">
-                            <a href="#" class="btn btn-secondary close-project"><span><i class="fa fa-close"></i>Close</span></a>
+                            <a href="#" class="btn btn-secondary close-project"><span><i class="fa fa-close"></i>{{__('cp.close')}} </span></a>
                         </div>
                     </div>
                     {{-- <span class="back-mobile close-project"><i class="fa fa-arrow-left"></i></span> --}}
@@ -503,7 +524,7 @@ Very passionate about aesthetics and UI design.</p>
                 <div class="contact-container">
                     <!-- Main Heading Starts -->
                     <div class="container page-title text-center">
-                        <h2 class="text-center">get <span>in touch</span></h2>
+                        <h2 class="text-center">{{__('cp.get')}} <span>{{__('cp.in_touch')}}</span></h2>
 						<span class="title-head-subtitle">{{$settings[0]->description_contact}}</span>
                     </div>
                     <!-- Main Heading Ends -->
@@ -513,25 +534,25 @@ Very passionate about aesthetics and UI design.</p>
                             <div class="col-12 col-md-4 col-xl-4 leftside">
                                 <ul class="custom-list">
                                     <li>
-                                        <h6 class="font-weight-600"> <span class="contact-title">Phone</span><i class="fa fa-whatsapp"></i><span class="contact-content">{{$infos[0]->mobile}}</span></h6>
+                                        <h6 class="font-weight-600"> <span class="contact-title">{{__('cp.phone')}}</span><i class="fa fa-whatsapp"></i><span class="contact-content">{{$infos[0]->mobile}}</span></h6>
                                     </li>
                                     <li>
-                                        <h6 class="font-weight-600"> <span class="contact-title">email</span><i class="fa fa-envelope-o fs-14"></i><span class="contact-content">{{$infos[0]->email}}</span></h6>
+                                        <h6 class="font-weight-600"> <span class="contact-title">{{__('cp.email')}}</span><i class="fa fa-envelope-o fs-14"></i><span class="contact-content">{{$infos[0]->email}}</span></h6>
 
                                     </li>
                                     <li>
-                                        <h6 class="font-weight-600"><span class="contact-title">instagram</span><i class="fa fa-instagram"></i><span class="contact-content">{{$infos[0]->facebook_url}}</span></h6>
+                                        <h6 class="font-weight-600"><span class="contact-title">{{__('cp.instagram')}}</span><i class="fa fa-instagram"></i><span class="contact-content">{{$infos[0]->facebook_url}}</span></h6>
 
                                     </li>
                                     <li>
-                                        <h6 class="font-weight-600"><span class="contact-title">Dribbble </span><i class="fa fa-dribbble"></i><span class="contact-content">{{$infos[0]->dribbble}}</span></h6>
+                                        <h6 class="font-weight-600"><span class="contact-title">{{__('cp.dribbble')}} </span><i class="fa fa-dribbble"></i><span class="contact-content">{{$infos[0]->dribbble}}</span></h6>
                                     </li>
                                 </ul>
 
                                 <!-- Social Media Profiles Starts -->
 
                                 <div class="social">
-                                    <h6 class="font-weight-600 uppercase">Social Profiles</h6>
+                                    <h6 class="font-weight-600 uppercase">{{__('cp.social_profile')}}</h6>
                                     <ul class="list-inline social social-intro text-center p-none">
                                         <li class="facebook"><a title="Facebook" href="{{$infos[0]->facebook_url}}"><i class="fa fa-facebook"></i></a>
                                         </li>
@@ -549,23 +570,23 @@ Very passionate about aesthetics and UI design.</p>
                             <!-- Contact Form Starts -->
                             <div class="col-12 col-md-8 col-xl-8 rightside">
                                 <p>
-                                    If you have any suggestion, project or even you want to say Hello.. please fill out the form below and I will reply you shortly.
+                                    {{$settings[0]->description_contact}}
                                 </p>
                                 <form id="create-form" class="contactform" >
                                     <div class="row">
                                         <!-- Name Field Starts -->
                                         <div class="form-group col-xl-6"> <i class="fa fa-user prefix"></i>
-                                            <input id="name"  type="text" class="form-control" placeholder="YOUR NAME" required>
+                                            <input id="name"  type="text" class="form-control" placeholder="{{__('cp.your_name')}}" required>
                                         </div>
                                         <!-- Name Field Ends -->
                                         <!-- Email Field Starts -->
                                         <div class="form-group col-xl-6"> <i class="fa fa-envelope prefix"></i>
-                                            <input id="email" type="email" class="form-control" placeholder="YOUR EMAIL" required>
+                                            <input id="email" type="email" class="form-control" placeholder="{{__('cp.your_email')}}"  required>
                                         </div>
                                         <!-- Email Field Ends -->
                                         <!-- Comment Textarea Starts -->
                                         <div class="form-group col-xl-12"> <i class="fa fa-messages prefix"></i>
-                                            <textarea id="message" class="form-control" placeholder="YOUR MESSAGE" required></textarea>
+                                            <textarea id="message" class="form-control" placeholder="{{__('cp.your_message')}}"  required></textarea>
                                         </div>
                                         <!-- Comment Textarea Ends -->
                                     </div>
@@ -573,7 +594,7 @@ Very passionate about aesthetics and UI design.</p>
                                     <div class="submit-form">
                                             {{-- <button class="btn button-animated" type="submit" name="send"><span><i class="fa fa-send"></i> Send Message</span></button> --}}
                                         {{-- <input  type="button" name="send"><span><i class="fa fa-send" onclick="performStore()"></i> Send Message</span></button> --}}
-                                        <button  onclick="performStore()" class="btn button-animated" name="send"><span><i class="fa fa-send" ></i> Send Message</span></button>
+                                        <button  onclick="performStore()" class="btn button-animated" name="send"><span><i class="fa fa-send" ></i> {{__('cp.send_message')}} </span></button>
                                     </div>
                                     <!-- Submit Form Button Ends -->
                                     {{-- <div class="form-message"> <span class="output_message text-center font-weight-600 uppercase"></span>
@@ -590,7 +611,7 @@ Very passionate about aesthetics and UI design.</p>
             <!-- Blog Section Starts -->
             <section id="blog">
                 <div class="container page-title text-center">
-                    <h2 class="text-center">latest <span>posts</span></h2>
+                    <h2 class="text-center">{{__('cp.latest')}} <span>{{__('cp.posts')}}</span></h2>
 					<span class="title-head-subtitle">tips, insights, and best practices about web design and developpment</span>
                 </div>
                 <div class="container">

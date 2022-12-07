@@ -289,20 +289,169 @@ return [
     'refund_error'=>'خطأ في عملية الارجاع',
 
 
+    'select_cataegory'=>'اختر الفئة',
 
 
     'educations'=>'التعليم',
+    'admins_count'=>'عدد المدراء',
     
     'add_education'=>'اضافة تعليم',
     'education_name'=>'اسم التعليم',
+    'education_name_en'=>'اسم التعليم انجليزي',
+    'education_name_ar'=>' اسم التعليم عربي',
     'description_name'=>'وصف التعليم',
     'company_name'=>'مكان التعليم',
+    'company_name_en'=>'مكان التعليم انجليزي',
+    'company_name_ar'=>'مكان التعليم عربي',
+    'education_name_en'=>'اسم التعليم انجليزي',
+    'education_name_ar'=>'اسم التعليم عربي',
+
+    'experience_name'=>'اسم الخبرة',
+    'experience_name_en'=>' اسم الخبرة انجليزي',
+    'experience_name_ar'=>'اسم الخبرة عربي',
+    // 'description_name'=>'Description Name',
+    // 'description_name_en'=>'Description Name In English',
+    // 'description_name_ar'=>'Description Name In Arabic',
+
 
     'start_date'=>' تاريخ البداية',
     'end_date'=>'تاريخ النهاية ',
+    'please_enter'=>'من فضلك',
 
 
-    'please_enter'=>'من فضلك  ',
+    'messages'=>'الرسائل',
+    'manage'=>'ادارة',
+    'send_date'=>'تاريخ الارسال',
+
+
+    'projects'=>'المشاريع',
+    'video'=>'فيديو',
+    'slider_image'=>'سلايدر صور',
+    'youtube_url'=>'رابط يوتيوب',
+    'facebook_url'=>'رابط الفيسبوك',
+    'github_url'=>'رابط الجيت هب',
+
+    'twitter_url'=>'رابط التويتر',
+    'skybe_url'=>'رابط السكاي بي',
+
+    'experiences'=>'الخبرات',
+    'experience_name'=>'اسم الخبرة',
+
+    'edit_info'=>'تعديل المعلومات الشخصية',
+    'basic_info'=>'المعلومات الشخصية',
+    'f_name'=>'الاسم الأول',
+    'f_name_en'=>'الاسم الأول انجليزي',
+    'f_name_ar'=>'الاسم الأول عربي',
+    'l_name'=>'الاسم الاخير',
+    'l_name_en'=>'الاسم الاخير انجليزي',
+    'l_name_ar'=>'لاسم الأول عربي',
+    'job'=>'الوظيفة',
+    'job_en'=>'الوظيفة انجليزي',
+    'job_ar'=>'الوظيفة عربي',
+    'location'=>'الموقع',
+    'location_en'=>'الموقع انجليزي',
+    'location_ar'=>'الموقع عربي',
+    'freelance_status'=>'حالة الفري لانس',
+    'select_languages'=>'اختر اللغات',
+    'please'=>'من فضلك',
+    'skybe'=>'سكاي بي',
+
+    'cv'=>'السيرة الذاتية',
+
+
+
+    'hr'=>'الموارد البشرية',
+    'client_services'=>'خدمة الزبائن',
+    'portfolio_managment'=>'إدارة الملف',
+    'account_managment'=>'ادارة الحساب',
+
+
+    'main_setting'=>'الاعدادات الرئيسية',
+    'description_home'=>'وصف الصفحة الرئيسية',
+    'description_home_en'=>'وصف الصفحة الرئيسية انجليزي',
+    'description_home_ar'=>'وصف الصفحة الرئيسية عربي',
+
+    'description_contact'=>'وصف جهة الاتصال',
+    'description_contact_en'=>'وصف جهة الاتصال انجليزي',
+    'description_contact_ar'=>' وصف جهة الاتصال عربي',
+
+    'description_portfolio'=>'وصف المشاريع',
+    'description_portfolio_en'=>'وصف المشاريع انجليزي',
+    'description_portfolio_ar'=>'وصف المشاريع عربي',
+    'description_about'=>'وصف عني',
+    'description_about_en'=>'وصف عني انجليزي',
+    'description_about_ar'=>'وصف عني عربي',
+
+    'add_skill'=>'اضافة مهارة',
+    'edit_skill'=>'تعديل المهارة',
+    'degree'=>'الدرجة',
+    'enter_degree'=>'أدخل الدرجة',
+    'enter_title_en'=>'أدخل العنوان انجليزي',
+    'enter_title_ar'=>'أدخل العنوان عربي',
+
+
+
+
+
+
+   // FRONT WEBSITE
+   'title_home'=>'أهلا',
+   'home'=>'الرئيسية',
+   'im'=>'أنا',
+   'more_about_me'=>'المزيد عني',
+   'about'=>'حول',
+   'me'=>'نفسي',
+   'my'=>'لي',
+
+   // PROJECTS SECTION
+
+   'portfolio'=>'بورتفوليو',
+   'project'=>'مشروع',
+   'client'=>'زبون',
+   'budget'=>'السعر',
+   'duration'=>'المدة',
+   'technologies'=>'التقنيات',
+   'preview'=>'عرض',
+   'close'=>'اغلاق',
+   'months'=>'شهور',
+
+
+
+   // ABOUT SECTION
+
+   'about'=>'حول',
+   'f_name'=>'الاسم الأول',
+   'l_name'=>'الاسم الأخير',
+   'birthdate'=>'تاريخ الميلاد',
+   'nationality'=>'الجنسية',
+   'experience'=>'الخبرة',
+   'address'=>'العنوان',
+   'freelance'=>'فريلانس',
+   'languages'=>'اللغات',
+   'phone'=>'الموبايل',
+   'email'=>'الايميل ',
+   'skype'=>'سكاي بي',
+   'dribbble'=>'دريبيل',
+   'download'=>'قم بتنزيل سيرتي الذاتية',
+   'education'=>'التعليم',
+//    'experience'=>'الخبرات',
+   'skills'=>'المهارات',
+
+   // CONTACT SECTION
+
+
+   'my_portfolio'=>'ملفي',
+   'get'=>'ابقى',
+   'in_touch'=>'على تواصل',
+   'contact'=>'تواصل',
+   'your_name'=>'اسمك',
+   'your_email'=>'ايميلك',
+   'your_message'=>'رسالتك',
+   'send_message'=>'ارسل الرسالة',
+   'latest'=>'آخر ',
+   'posts'=>'المشاركات ',
+   'Social_profile'=>'التواصل الاجتماعي',
+   'get_in_touch'=>'ابقى على تواصل ',
 
 
 

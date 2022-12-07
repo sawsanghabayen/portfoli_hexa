@@ -70,17 +70,17 @@
                                     </div>
                                 </th>
                                 
-                                <th style="min-width: 120px">{{__('cms.image')}}</th>
-                                <th style="min-width: 120px">{{__('cms.video')}}</th>
-                                <th style="min-width: 120px">{{__('cms.sliderimage')}}</th>
-                                <th style="min-width: 120px">{{__('cms.youtube_url')}}</th>
-                                <th style="min-width: 150px">{{__('cms.category')}}</th>
-                                <th style="min-width: 150px">{{__('cms.name')}}</th>
-                                <th style="min-width: 150px">{{__('cms.client')}}</th>
-                                <th style="min-width: 150px">{{__('cms.technologies')}}</th>
-                                <th style="min-width: 150px">{{__('cms.duration')}}</th>
-                                <th style="min-width: 150px">{{__('cms.budget')}}</th>
-                                <th style="min-width: 150px">{{__('cms.github_url')}}</th>
+                                <th style="min-width: 120px">{{__('cp.image')}}</th>
+                                <th style="min-width: 120px">{{__('cp.video')}}</th>
+                                <th style="min-width: 120px">{{__('cp.slider_image')}}</th>
+                                <th style="min-width: 120px">{{__('cp.youtube_url')}}</th>
+                                <th style="min-width: 150px">{{__('cp.category')}}</th>
+                                <th style="min-width: 150px">{{__('cp.name')}}</th>
+                                <th style="min-width: 150px">{{__('cp.client')}}</th>
+                                <th style="min-width: 150px">{{__('cp.technologies')}}</th>
+                                <th style="min-width: 150px">{{__('cp.duration')}}</th>
+                                <th style="min-width: 150px">{{__('cp.budget')}}</th>
+                                <th style="min-width: 150px">{{__('cp.github_url')}}</th>
                             </tr>
                             </thead>
                             <tbody>

@@ -49,7 +49,7 @@
                                 <label class="col-3 col-form-label">{{__('cp.start_date')}}:</label>
                                 <div class="col-9">
                                     <input type="date" class="form-control" name="start_date" 
-                                        placeholder="Enter start_date" />
+                                        placeholder="{{__('cp.start_date')}}" />
                                     <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.start_date')}}</span>
                                 </div>
                             </div>
@@ -57,7 +57,7 @@
                                 <label class="col-3 col-form-label">{{__('cp.end_date')}}:</label>
                                 <div class="col-9">
                                     <input type="date" class="form-control" name="end_date" 
-                                        placeholder="Enter end_date" />
+                                        placeholder="{{__('cp.end_date')}}" />
                                     <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.end_date')}}</span>
                                 </div>
                             </div>
@@ -67,7 +67,7 @@
                                         <div class="form-group">
                                             <label>{{__('cp.company_name_'.$locale->lang)}}</label>
                                             <input  required   {{($locale->lang == 'ar') ? 'dir=rtl' :'' }} type="text" class="form-control" id="company_name"  name="company_name_{{$locale->lang}}"
-                                            placeholder="Enter company_name" value="{{old('company_name_'.$locale->lang)}}"/>
+                                            placeholder="{{__('cp.company_name')}}" value="{{old('company_name_'.$locale->lang)}}"/>
                                         <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.company_name_'.$locale->lang)}} </span>
                                         </div>
                                     </div>

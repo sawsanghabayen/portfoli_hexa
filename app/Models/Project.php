@@ -17,6 +17,11 @@ class Project extends Model
     {
         return url('uploads/images/projects/' . $value);
     }
+    
+    // public function getCategoryAttribute($value)
+    // {
+    //     return ;
+    // }
 
     public function images()
     {
