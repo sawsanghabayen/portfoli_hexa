@@ -25,16 +25,6 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
-// use App\Http\Controllers\WEB\Admin\SettingController;
-
-
-
-
-
-
-
-
-
 Route::group([
     'prefix' => LaravelLocalization::setLocale(),
     'middleware' => [
@@ -52,12 +42,6 @@ Route::group([
     });
 Route::get('/cv',[ App\Http\Controllers\InfoController::class,'downloadCv'])->name('portfolio.cv');
     
-
-    // Route::get('settings', 'SettingController@index')->name('settings.index');
-
-    // Route::resource('/setting_copies', 'WEB\SubAdmin\CategoryController');      
-    // Route::resource('/categories', 'WEB\Admin\CategoryController');
-    // Route::resource('/categories', 'WEB\SubAdmin\CategoryController');
 
 
 
@@ -135,40 +119,8 @@ Route::get('/cv',[ App\Http\Controllers\InfoController::class,'downloadCv'])->na
 
 
 
-        Route::get('/users', 'WEB\Admin\UsersController@index')->name('users.all');
-        Route::post('/users', 'WEB\Admin\UsersController@store')->name('users.store');
-        Route::get('/users/create', 'WEB\Admin\UsersController@create')->name('users.create');
-        Route::delete('users/{id}', 'WEB\Admin\UsersController@destroy')->name('users.destroy');
-        Route::get('/users/{id}/edit', 'WEB\Admin\UsersController@edit')->name('users.edit');
-        Route::get('/users/{id}/show', 'WEB\Admin\UsersController@show')->name('users.show');
-        Route::get('/users/{id}/orders', 'WEB\Admin\UsersController@orders')->name('users.orders');
-        Route::get('/users/{id}/{order_id}/editOrder', 'WEB\Admin\UsersController@editOrder')->name('users.editOrder');
-        Route::patch('/users/{id}', 'WEB\Admin\UsersController@update')->name('users.update');
-        Route::get('/users/{id}/edit_password', 'WEB\Admin\UsersController@edit_password')->name('users.edit_password');
-        Route::post('/users/{id}/edit_password', 'WEB\Admin\UsersController@update_password')->name('users.edit_password');
-        Route::get('/exportUsers', 'WEB\Admin\UsersController@exportUsers');
-        Route::get('/pdfUsers', 'WEB\Admin\UsersController@pdfUsers');
-
-
-
-        Route::get('/providers/{id}/orders', 'WEB\Admin\ProvidersController@orders')->name('providers.orders');
-        Route::get('/providers/{id}/{order_id}/editOrder', 'WEB\Admin\ProvidersController@editOrder')->name('users.editOrder');
-        Route::get('/providers', 'WEB\Admin\ProvidersController@index')->name('providers.all');
-        Route::post('/providers', 'WEB\Admin\ProvidersController@store')->name('providers.store');
-        Route::get('/providers/create', 'WEB\Admin\ProvidersController@create')->name('providers.create');
-        Route::delete('providers/{id}', 'WEB\Admin\ProvidersController@destroy')->name('providers.destroy');
-        Route::get('/providers/{id}/edit', 'WEB\Admin\ProvidersController@edit')->name('providers.edit');
-        Route::get('/providers/{id}/categories', 'WEB\Admin\ProvidersController@categories')->name('providers.categories');
-        Route::get('/providers/{id}/meals', 'WEB\Admin\ProvidersController@meals')->name('providers.meals');
-        Route::patch('/providers/{id}', 'WEB\Admin\ProvidersController@update')->name('providers.update');
-        Route::get('/providers/{id}/edit_password', 'WEB\Admin\ProvidersController@edit_password')->name('providers.edit_password');
-        Route::post('/providers/{id}/edit_password', 'WEB\Admin\ProvidersController@update_password')->name('providers.edit_password');
-        Route::get('/exportProviders', 'WEB\Admin\ProvidersController@exportProviders');
-        Route::get('/pdfProviders', 'WEB\Admin\ProvidersController@pdfProviders');
-        Route::get('/providers/getCategories', 'WEB\Admin\ProvidersController@getCategories')->name('providers.getCategories');
-        Route::get('/providers/{id}/businessHours', 'WEB\Admin\ProvidersController@businessHours')->name('providers.businessHours');
-        Route::post('/providers/{id}/updateBusinessHours', 'WEB\Admin\ProvidersController@updateBusinessHours')->name('providers.updateBusinessHours');
-
+     
+    
 
 
 
@@ -201,47 +153,9 @@ Route::get('/cv',[ App\Http\Controllers\InfoController::class,'downloadCv'])->na
         Route::put('profile/personal', [AuthController::class, 'updateProfilePersonalInformation'])->name('admin.profile.update-personal-information');
         
         Route::get('profile/account', [AuthController::class, 'profileAccountInformatiion'])->name('admin.profile.account-information');
-        // Route::get('/settings', 'WEB\Admin\SettingController@index');
-        // Route::get('/settings/create', 'WEB\Admin\SettingController@create');
-        // Route::post('/settings', 'WEB\Admin\SettingController@store');
-        // Route::resource('/settings', 'WEB\Admin\SettingController');
-
-        // Route::resource('/settings', 'WEB\Admin\SettingCopyController');
+       
 
 
-
-        Route::get('/report/meals', 'WEB\Admin\MealController@report')->name('mealsReport');
-        Route::get('/export/excel/meals', 'WEB\Admin\MealController@exportExcel');
-        Route::get('/MealsReportForAdmin/excel/meals', 'WEB\Admin\MealController@MealsReportForAdmin');
-        Route::resource('/meals', 'WEB\Admin\MealController');
-        Route::get('/meals/{id}/options', 'WEB\Admin\MealController@options');
-        Route::get('/meals/{id}/createOption', 'WEB\Admin\MealController@createOption');
-        Route::post('/meals/{id}/storeOption', 'WEB\Admin\MealController@storeOption');
-        Route::get('/meals/{id}/editOption', 'WEB\Admin\MealController@editOption');
-        Route::post('/meals/{id}/updateOption', 'WEB\Admin\MealController@updateOption');
-        Route::delete('/meals/{id}/deleteOption', 'WEB\Admin\MealController@deleteOption');
-        Route::delete('/meals/{id}/deleteOffer', 'WEB\Admin\MealController@deleteOffer');
-
-
-        Route::resource('/option_values', 'WEB\Admin\OptionValueController');
-        Route::resource('/promo_codes', 'WEB\Admin\PromoCodesController');
-
-
-        Route::get('getNewOrdersCount/orders','WEB\Admin\OrderController@getNewOrdersCount');
-        Route::get('invoice/orders/{id}','WEB\Admin\OrderController@invoice')->name('invoice');
-        Route::get('refund/orders/{id}','WEB\Admin\OrderController@refund');
-        Route::get('changeOrdersCount/orders','WEB\Admin\OrderController@changeOrdersCount');
-        Route::get('/orders/changeStatus/{id}/{status}', 'WEB\Admin\OrderController@changeStatus')->name('changeOrderStatus');
-        Route::get('/report/orders', 'WEB\Admin\OrderController@report')->name('ordersReport');
-        Route::get('/pdfOrders', 'WEB\Admin\OrderController@pdfOrders');
-        Route::get('/export/excel/orders', 'WEB\Admin\OrderController@OrdersExportForAdmin');
-        Route::get('/OrdersReportForAdmin/excel/orders', 'WEB\Admin\OrderController@OrdersReportForAdmin');
-        Route::resource('/orders', 'WEB\Admin\OrderController');
-
-
-        Route::resource('/cuisines', 'WEB\Admin\CuisineController');
-
-        Route::resource('/banners', 'WEB\Admin\BannerController');
 
 
         Route::get('/contacts', 'WEB\Admin\ContactController@index');
