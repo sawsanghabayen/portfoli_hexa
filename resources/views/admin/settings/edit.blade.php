@@ -164,6 +164,4 @@
 
 @endsection
 
-@section('script')
 
-@endsection

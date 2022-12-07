@@ -216,91 +216,58 @@
                                   
                                 </select>
                             </div>
+                                </div>
+                            </div>
                             <span class="form-text text-muted">{{__('cp.please')}} {{__('cp.select_languages')}}</span>
+                       
+
+                      
+        
+                    
+                             
+                                {{-- </div> --}}
+                            {{-- </div> --}}
+        
+                 
+                        {{-- </div> --}}
+                        <div class="card-header">
+                            <h3 class="card-title">{{__('cp.image')}}</h3>
                         </div>
-                            </div>
-        
-                            <div class="form-group row">
-                                <label class="col-3 col-form-label">{{__('cp.image')}}:</label>
-
-                                <div class="card-body">
-                                    <div class="form-group">
-                                        <div class="col-md-6 col-md-offset-3">
-                                            <div class="fileinput-new thumbnail"
-                                                 onclick="document.getElementById('edit_image').click()"
-                                                 style="cursor:pointer">
-                                                <img src="{{$info->image}}" id="editImage" alt="">
-                                            </div>
-                                            <div class="btn red"
-                                                 onclick="document.getElementById('edit_image').click()">
-                                                <i class="fa fa-pencil"></i>
-                                            </div>
-                                            <input type="file" class="form-control" name="image"
-                                                   id="edit_image"
-                                                   style="display:none">
-                                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <div class="col-md-6 col-md-offset-3">
+                                    <div class="fileinput-new thumbnail"
+                                         onclick="document.getElementById('edit_image').click()"
+                                         style="cursor:pointer">
+                                        <img src="{{$info->image}}" id="editImage" alt="">
                                     </div>
+                                    <div class="btn red"
+                                         onclick="document.getElementById('edit_image').click()">
+                                        <i class="fa fa-pencil"></i>
+                                    </div>
+                                    <input type="file" class="form-control" name="image"
+                                           id="edit_image"
+                                           style="display:none">
                                 </div>
                             </div>
-                                {{-- <div class="col-9">
-                                    <div class="image-input image-input-empty image-input-outline" id="image" name="image"
-                                    
-                                    @if($info->image !=null)
+                        </div>
 
-                                    style='background-image: url("{{$info->image}}")'
-                                    
-                                    @endif
-                                    >
-                                    <div class="image-input-wrapper"></div>
-        
-                                    <label
-                                        class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow"
-                                        data-action="change" data-toggle="tooltip" title=""
-                                        data-original-title="Change image">
-                                        <i class="fa fa-pen icon-sm text-muted"></i>
-                                        <input type="file" name="image" accept=".png, .jpg, .jpeg" />
-                                        <input type="hidden" name="image" />
-                                    </label>
-        
-                                    <span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow"
-                                        data-action="cancel" data-toggle="tooltip" title="Cancel image">
-                                        <i class="ki ki-bold-close icon-xs text-muted"></i>
-                                    </span>
-        
-                                  
-                                </div> --}}
-                                </div>
-                            </div>
-        
-                        <div id ="cv_div" class="form-group row">
-                                <label class="col-3 col-form-label">{{__('cp.cv')}}</label>
-        
-                                <input id= "cv" name="cv" type="file" class="form-control"><br/>
-                                <div class="progress">
-                                    <div class="bar"></div >
-                                    <div class="percent">0%</div >
-                                </div> 
-                                 <br>
-                            </div>
+                        {{-- <div id ="cv_div" class="form-group row">
+                            <label class="col-3 col-form-label">{{__('cp.cv')}}</label>
+    
+                            <input id= "cv" name="cv" type="file" class="form-control"><br/>
+                            <div class="progress">
+                                <div class="bar"></div >
+                                <div class="percent">0%</div >
+                            </div> 
+                             <br>
+                        </div> --}}
+
+          
                      
-                        </div>
-                            {{-- <div class="row">
-                                @foreach($locales as $locale)
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>{{__('cp.description_'.$locale->lang)}}</label>
-                                            <textarea type="text" class="form-control form-control-solid"
-                                                      rows="3" maxlength="150"
-                                                      {{($locale->lang == 'ar') ? 'dir=rtl' :'' }} 
-                                                     
-                                                      
-                                                      name="description_{{$locale->lang}}"
-                                                      required>{{old('description_'.$locale->lang,@$info->translate($locale->lang)->description)}}</textarea>
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div> --}}
                     </div>
+                    </div>
+                
 
                     <button type="submit" id="submitForm" style="display:none"></button>
                 </form>
@@ -316,11 +283,11 @@
 @endsection
 
 @section('js')
-<script src="{{asset('assets/js/pages/crud/forms/widgets/bootstrap-select.js')}}"></script> 
- <script src="{{asset('assets/js/pages/crud/file-upload/image-input.js')}}"></script>
+{{-- <script src="{{asset('assets/js/pages/crud/forms/widgets/bootstrap-select.js')}}"></script> 
+ <script src="{{asset('assets/js/pages/crud/file-upload/image-input.js')}}"></script> --}}
 <script>
 
-var image = new KTImageInput('image');
+// var image = new KTImageInput('image');
     
 </script>
 
