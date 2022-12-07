@@ -378,6 +378,8 @@ return [
     'edit_skill'=>'Edit Skill',
     'degree'=>'Degree',
     'enter_degree'=>'Enter Degree',
+    'title_en'=>'Title In English',
+    'title_ar'=>'Title In Arabic',
     'enter_title_en'=>'Enter title In English',
     'enter_title_ar'=>'Enter title In Arabic',
     'select_cataegory'=>'Select Category',

@@ -75,8 +75,9 @@ style="direction: {{App::isLocale('en') ? 'ltr' : 'rtl'}};">
 			<ul class="stretchy-nav">
 				<li class="active"><a class="home" href="#home"><span>{{__('cp.home')}}</span></a></li>
 				<li><a href="#about"><span>{{__('cp.about')}}</span></a></li>
-				<li><a href="#works"><span>{{__('cp.portfolio')}}</span></a></li>
-				<li><a href="#contact"><span>{{__('cp.contact')}}</span></a></li>
+				<li><a href="#works"><span>{{__('cp.contact')}}</span></a></li>
+				<li><a href="#contact"><span>{{__('cp.portfolio')}}</span></a></li>
+				{{-- <li><a href="#works"><span>{{__('cp.portfolio')}}</span></a></li> --}}
 			</ul>
 			<span aria-hidden="true" class="stretchy-nav-bg"></span>
 		</div>
@@ -300,6 +301,96 @@ style="direction: {{App::isLocale('en') ? 'ltr' : 'rtl'}};">
                 </div>
             </section>
             <!-- About Section Ends -->
+
+              <!-- Contact Section Starts -->
+              <section id="contact">
+                <div class="contact-container">
+                    <!-- Main Heading Starts -->
+                    <div class="container page-title text-center">
+                        <h2 class="text-center">{{__('cp.get')}} <span>{{__('cp.in_touch')}}</span></h2>
+						<span class="title-head-subtitle">{{$settings[0]->description_contact}}</span>
+                    </div>
+                    <!-- Main Heading Ends -->
+                    <div class="container">
+                        <div class="row contact">
+                            <!-- Contact Infos Starts -->
+                            <div class="col-12 col-md-4 col-xl-4 leftside">
+                                <ul class="custom-list">
+                                    <li>
+                                        <h6 class="font-weight-600"> <span class="contact-title">{{__('cp.phone')}}</span><i class="fa fa-whatsapp"></i><span class="contact-content">{{$infos[0]->mobile}}</span></h6>
+                                    </li>
+                                    <li>
+                                        <h6 class="font-weight-600"> <span class="contact-title">{{__('cp.email')}}</span><i class="fa fa-envelope-o fs-14"></i><span class="contact-content">{{$infos[0]->email}}</span></h6>
+
+                                    </li>
+                                    <li>
+                                        <h6 class="font-weight-600"><span class="contact-title">{{__('cp.instagram')}}</span><i class="fa fa-instagram"></i><span class="contact-content">{{$infos[0]->facebook_url}}</span></h6>
+
+                                    </li>
+                                    <li>
+                                        <h6 class="font-weight-600"><span class="contact-title">{{__('cp.dribbble')}} </span><i class="fa fa-dribbble"></i><span class="contact-content">{{$infos[0]->dribbble}}</span></h6>
+                                    </li>
+                                </ul>
+
+                                <!-- Social Media Profiles Starts -->
+
+                                <div class="social">
+                                    <h6 class="font-weight-600 uppercase">{{__('cp.social_profile')}}</h6>
+                                    <ul class="list-inline social social-intro text-center p-none">
+                                        <li class="facebook"><a title="Facebook" href="{{$infos[0]->facebook_url}}"><i class="fa fa-facebook"></i></a>
+                                        </li>
+                                        <li class="twitter"><a title="Twitter" href="{{$infos[0]->twitter_url}}"><i class="fa fa-twitter"></i></a>
+                                        </li>
+                                        <li class="youtube"><a title="Youtube" href="{{$infos[0]->youtube_url}}"><i class="fa fa-youtube"></i></a>
+                                        </li>
+                                        <li class="dribbble"><a title="Dribbble" href="{{$infos[0]->dribbble}}"><i class="fa fa-dribbble"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- Social Media Profiles Ends -->
+                            </div>
+                            <!-- Contact Infos Ends -->
+                            <!-- Contact Form Starts -->
+                            <div class="col-12 col-md-8 col-xl-8 rightside">
+                                <p>
+                                    {{$settings[0]->description_contact}}
+                                </p>
+                                <form id="create-form" class="contactform" >
+                                    <div class="row">
+                                        <!-- Name Field Starts -->
+                                        <div class="form-group col-xl-6"> <i class="fa fa-user prefix"></i>
+                                            <input id="name"  type="text" class="form-control" placeholder="{{__('cp.your_name')}}" required>
+                                        </div>
+                                        <!-- Name Field Ends -->
+                                        <!-- Email Field Starts -->
+                                        <div class="form-group col-xl-6"> <i class="fa fa-envelope prefix"></i>
+                                            <input id="email" type="email" class="form-control" placeholder="{{__('cp.your_email')}}"  required>
+                                        </div>
+                                        <!-- Email Field Ends -->
+                                        <!-- Comment Textarea Starts -->
+                                        <div class="form-group col-xl-12"> <i class="fa fa-messages prefix"></i>
+                                            <textarea id="message" class="form-control" placeholder="{{__('cp.your_message')}}"  required></textarea>
+                                        </div>
+                                        <!-- Comment Textarea Ends -->
+                                    </div>
+                                    <!-- Submit Form Button Starts -->
+                                    <div class="submit-form">
+                                            {{-- <button class="btn button-animated" type="submit" name="send"><span><i class="fa fa-send"></i> Send Message</span></button> --}}
+                                        {{-- <input  type="button" name="send"><span><i class="fa fa-send" onclick="performStore()"></i> Send Message</span></button> --}}
+                                        <button  onclick="performStore()" class="btn button-animated" name="send"><span><i class="fa fa-send" ></i> {{__('cp.send_message')}} </span></button>
+                                    </div>
+                                    <!-- Submit Form Button Ends -->
+                                    {{-- <div class="form-message"> <span class="output_message text-center font-weight-600 uppercase"></span>
+                                    </div> --}}
+                                </form>
+                            </div>
+                            <!-- Contact Form Ends -->
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Contact Section Ends -->
             <!-- Portfolio Section Starts -->
             <section id="work">
                 <div class="portfolio-container">
@@ -444,13 +535,29 @@ style="direction: {{App::isLocale('en') ? 'ltr' : 'rtl'}};">
                         <div class="col-12 col-sm-6 p-none">
                             <h3 class="font-weight-600 uppercase">
                              @if( $project->category_id == 1 )
-                                        IMAGE FORMATE 
+                             @if (getLocal() =='en')
+                             IMAGE FORMATE 
+                             @elseif (getLocal() =='ar')
+                             فئة الصورة
+                             @endif
                                         @elseif( $project->category_id == 2 )
-                                        VIDEO FORMATE 
+                                        @if (getLocal() =='en')
+                                                VIDEO FORMATE 
+                                                @elseif (getLocal() =='ar')
+                                                فئة الصورة
+                                                @endif
                                         @elseif( $project->category_id == 3 )
-                                        SLIDER FORMATE 
+                                        @if (getLocal() =='en')
+                                                SLIDER FORMATE 
+                                                @elseif (getLocal() =='ar')
+                                                فئة الصورة
+                                                @endif
                                         @else
+                                        @if (getLocal() =='en')
                                         YOUTUBE FORMATE 
+                                        @elseif (getLocal() =='ar')
+                                        فئة الصورة
+                                        @endif
                                         @endif
                                         
 
@@ -480,37 +587,6 @@ style="direction: {{App::isLocale('en') ? 'ltr' : 'rtl'}};">
 
                 @endforeach
 
-{{-- 
-                <div class="project-info-container project-2">
-                    <!-- Main Content Starts -->
-                    <div class="project-info-main-content">
-                        <div class="videocontainer">
-                            <iframe class="youtube-video" src="https://www.youtube.com/embed/7e90gBu4pas?enablejsapi=1&version=3&playerapiid=ytplayer" allowfullscreen></iframe>
-                        </div>
-                    </div> --}}
-                    <!-- Main Content Ends -->
-                    <!-- Project Details Starts -->
-                    {{-- <div class="projects-info row">
-                        <div class="col-12 col-sm-6 p-none">
-                            <h3 class="font-weight-600 uppercase">Youtube Format</h3>
-                            <ul class="project-details">
-                                <li><i class="fa fa-file-text-o"></i><span class="font-weight-400 project-label"> Project </span>: <span class="font-weight-600 uppercase">Website</span>
-                                </li>
-                                <li><i class="fa fa-user-o"></i><span class="font-weight-400 project-label"> Client </span>: <span class="font-weight-600 uppercase">Envato</span>
-                                </li>
-                                <li><i class="fa fa-hourglass-o"></i><span class="font-weight-400 project-label"> Duration </span>: <span class="font-weight-600 uppercase">3 months</span>
-                                </li>
-                                <li><i class="fa fa-code"></i> <span class="font-weight-400 project-label"> Technologies</span> : <span class="font-weight-600 uppercase">html, javascript</span>
-                                </li>
-                                <li><i class="fa fa-money"></i> <span class="font-weight-400 project-label"> Budget</span> : <span class="font-weight-600 uppercase">1550 USD</span>
-                                </li>
-                            </ul>
-                            <a href="#" class="btn"><span><i class="fa fa-external-link"></i>preview</span></a>
-                        </div>
-                        <div class="col-6 p-none text-right">
-                            <a href="#" class="btn btn-secondary close-project"><span><i class="fa fa-close"></i>Close</span></a>
-                        </div>
-                    </div> --}}
                     <!-- Project Details Ends -->
                 </div>
 
@@ -519,95 +595,7 @@ style="direction: {{App::isLocale('en') ? 'ltr' : 'rtl'}};">
                 <!-- Portfolio Project Content Ends -->
             </section>
             <!-- Portfolio Section Ends -->
-            <!-- Contact Section Starts -->
-            <section id="contact">
-                <div class="contact-container">
-                    <!-- Main Heading Starts -->
-                    <div class="container page-title text-center">
-                        <h2 class="text-center">{{__('cp.get')}} <span>{{__('cp.in_touch')}}</span></h2>
-						<span class="title-head-subtitle">{{$settings[0]->description_contact}}</span>
-                    </div>
-                    <!-- Main Heading Ends -->
-                    <div class="container">
-                        <div class="row contact">
-                            <!-- Contact Infos Starts -->
-                            <div class="col-12 col-md-4 col-xl-4 leftside">
-                                <ul class="custom-list">
-                                    <li>
-                                        <h6 class="font-weight-600"> <span class="contact-title">{{__('cp.phone')}}</span><i class="fa fa-whatsapp"></i><span class="contact-content">{{$infos[0]->mobile}}</span></h6>
-                                    </li>
-                                    <li>
-                                        <h6 class="font-weight-600"> <span class="contact-title">{{__('cp.email')}}</span><i class="fa fa-envelope-o fs-14"></i><span class="contact-content">{{$infos[0]->email}}</span></h6>
-
-                                    </li>
-                                    <li>
-                                        <h6 class="font-weight-600"><span class="contact-title">{{__('cp.instagram')}}</span><i class="fa fa-instagram"></i><span class="contact-content">{{$infos[0]->facebook_url}}</span></h6>
-
-                                    </li>
-                                    <li>
-                                        <h6 class="font-weight-600"><span class="contact-title">{{__('cp.dribbble')}} </span><i class="fa fa-dribbble"></i><span class="contact-content">{{$infos[0]->dribbble}}</span></h6>
-                                    </li>
-                                </ul>
-
-                                <!-- Social Media Profiles Starts -->
-
-                                <div class="social">
-                                    <h6 class="font-weight-600 uppercase">{{__('cp.social_profile')}}</h6>
-                                    <ul class="list-inline social social-intro text-center p-none">
-                                        <li class="facebook"><a title="Facebook" href="{{$infos[0]->facebook_url}}"><i class="fa fa-facebook"></i></a>
-                                        </li>
-                                        <li class="twitter"><a title="Twitter" href="{{$infos[0]->twitter_url}}"><i class="fa fa-twitter"></i></a>
-                                        </li>
-                                        <li class="youtube"><a title="Youtube" href="{{$infos[0]->youtube_url}}"><i class="fa fa-youtube"></i></a>
-                                        </li>
-                                        <li class="dribbble"><a title="Dribbble" href="{{$infos[0]->dribbble}}"><i class="fa fa-dribbble"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <!-- Social Media Profiles Ends -->
-                            </div>
-                            <!-- Contact Infos Ends -->
-                            <!-- Contact Form Starts -->
-                            <div class="col-12 col-md-8 col-xl-8 rightside">
-                                <p>
-                                    {{$settings[0]->description_contact}}
-                                </p>
-                                <form id="create-form" class="contactform" >
-                                    <div class="row">
-                                        <!-- Name Field Starts -->
-                                        <div class="form-group col-xl-6"> <i class="fa fa-user prefix"></i>
-                                            <input id="name"  type="text" class="form-control" placeholder="{{__('cp.your_name')}}" required>
-                                        </div>
-                                        <!-- Name Field Ends -->
-                                        <!-- Email Field Starts -->
-                                        <div class="form-group col-xl-6"> <i class="fa fa-envelope prefix"></i>
-                                            <input id="email" type="email" class="form-control" placeholder="{{__('cp.your_email')}}"  required>
-                                        </div>
-                                        <!-- Email Field Ends -->
-                                        <!-- Comment Textarea Starts -->
-                                        <div class="form-group col-xl-12"> <i class="fa fa-messages prefix"></i>
-                                            <textarea id="message" class="form-control" placeholder="{{__('cp.your_message')}}"  required></textarea>
-                                        </div>
-                                        <!-- Comment Textarea Ends -->
-                                    </div>
-                                    <!-- Submit Form Button Starts -->
-                                    <div class="submit-form">
-                                            {{-- <button class="btn button-animated" type="submit" name="send"><span><i class="fa fa-send"></i> Send Message</span></button> --}}
-                                        {{-- <input  type="button" name="send"><span><i class="fa fa-send" onclick="performStore()"></i> Send Message</span></button> --}}
-                                        <button  onclick="performStore()" class="btn button-animated" name="send"><span><i class="fa fa-send" ></i> {{__('cp.send_message')}} </span></button>
-                                    </div>
-                                    <!-- Submit Form Button Ends -->
-                                    {{-- <div class="form-message"> <span class="output_message text-center font-weight-600 uppercase"></span>
-                                    </div> --}}
-                                </form>
-                            </div>
-                            <!-- Contact Form Ends -->
-
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- Contact Section Ends -->
+          
             <!-- Blog Section Starts -->
             <section id="blog">
                 <div class="container page-title text-center">

@@ -204,7 +204,7 @@
 
 
                                 {{-- @if(can(['users-show' , 'users-create' , 'users-edit' , 'users-delete'])) --}}
-                                    <li class="menu-item {{(explode("/", request()->url())[5] == "users") ? "menu-item-here" : ''}}" aria-haspopup="true">
+                                    {{-- <li class="menu-item {{(explode("/", request()->url())[5] == "users") ? "menu-item-here" : ''}}" aria-haspopup="true">
                                         <a href="{{url(getLocal().'/admin/users')}}" class="menu-link">
 										<span class="svg-icon menu-icon">
 											<!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2021-05-14-112058/theme/html/demo1/dist/../src/media/svg/icons/General/User.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -217,7 +217,8 @@
 										</span>
                                             <span class="menu-text">{{__('cp.users')}}</span>
                                         </a>
-                                    </li>
+                                    </li> --}}
+									
 										<li class="menu-section">
 								<h4 class="menu-text"> {{__('cp.client_services')}}</h4>
 								<i class="menu-icon ki ki-bold-more-hor icon-md"></i>

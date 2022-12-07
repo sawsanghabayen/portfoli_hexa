@@ -59,11 +59,11 @@
                             </div>
 
                             <div class="form-group row mt-4">
-                                <label class="col-3 col-form-label">{{__('cp.degree')}}:</label>
+                                <label class="col-3 col-form-label">{{__('cp.degree')}} %:</label>
                                 <div class="col-9">
                                     <input type="number" class="form-control" name="degree" 
                                         placeholder="{{__('cp.enter_degree')}}" />
-                                    <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.degree')}}</span>
+                                    <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.degree')}} %</span>
                                 </div>
                             </div>
                         
