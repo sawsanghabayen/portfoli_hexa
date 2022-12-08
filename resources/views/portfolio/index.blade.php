@@ -145,7 +145,7 @@ style="direction: {{App::isLocale('en') ? 'ltr' : 'rtl'}};">
 										<h6><span class="font-weight-600">{{__('cp.f_name')}}</span>{{$infos[0]->f_name}}</h6>
 									</li>
 									<li>
-										<h6><span class="font-weight-600">{{__('cp.l_name')}}</span>{{$infos[0]->f_name}}</h6>
+										<h6><span class="font-weight-600">{{__('cp.l_name')}}</span>{{$infos[0]->l_name}}</h6>
 									</li>
 									<li>
 										<h6><span class="font-weight-600">{{__('cp.birthdate')}}</span>{{$infos[0]->birthdate}}</h6>
