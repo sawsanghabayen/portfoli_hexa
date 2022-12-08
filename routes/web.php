@@ -45,13 +45,7 @@ Route::get('/cv',[ App\Http\Controllers\InfoController::class,'downloadCv'])->na
 
 
 
-    Route::get('/failPayment', function () { return view('website.fail');})->name('failPayment');
-    Route::get('/successPayment', function () {
-        return view('website.success');
-    })->name('successPayment');
-    Route::get('/payment', function () {
-        return view('website.payment');
-    })->name('payment');
+   
 
     Route::get('forgot/password', 'Auth\ForgotPasswordController@forgotPasswordForm')->name('forgotPasswordForm');
     Route::post('sendResetLinkEmail', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('sendResetLinkEmail');
@@ -118,24 +112,6 @@ Route::get('/cv',[ App\Http\Controllers\InfoController::class,'downloadCv'])->na
         Route::post('/updateMyPassword', 'WEB\Admin\AdminController@updateMyPassword')->name('admins.updateMyPassword');
 
 
-
-     
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         // Sawsan
         Route::get('/categories/{id}/meals', 'WEB\Admin\CategoryController@meals');
         Route::resource('/categories', 'WEB\Admin\CategoryController');
@@ -158,29 +134,6 @@ Route::get('/cv',[ App\Http\Controllers\InfoController::class,'downloadCv'])->na
 
 
 
-        Route::get('/contacts', 'WEB\Admin\ContactController@index');
-        Route::get('/contacts/{id}/show', 'WEB\Admin\ContactController@show');
-        Route::patch('/contacts/{id}', 'WEB\Admin\ContactController@update');
-        Route::get('/export/excel/contacts', 'WEB\Admin\ContactController@exportExcel');
-        Route::get('/pdfContacts', 'WEB\Admin\ContactController@pdfContacts');
-
-
-        Route::get('/join_requests', 'WEB\Admin\JoinRequestController@index');
-        Route::get('/join_requests/{id}/show', 'WEB\Admin\JoinRequestController@show');
-        Route::patch('/join_requests/{id}', 'WEB\Admin\JoinRequestController@update');
-        Route::get('/export/excel/join_requests', 'WEB\Admin\JoinRequestController@exportExcel');
-        Route::get('/pdfJoinRequests', 'WEB\Admin\JoinRequestController@pdfJoinRequests');
-
-
-        // Route::get('settings', 'WEB\Admin\SettingController@index')->name('settings.index');
-        // Route::get('settings', 'WEB\Admin\SettingController@create')->name('settings.create');
-        // Route::post('settings', 'WEB\Admin\SettingController@update')->name('settings.update');
-
-
-
-
-        Route::get('system_maintenance', 'WEB\Admin\SettingController@system_maintenance')->name('system.maintenance');
-        Route::post('system_maintenance', 'WEB\Admin\SettingController@update_system_maintenance')->name('update.system.maintenance');
 
 
         Route::resource('/pages', 'WEB\Admin\PagesController');
@@ -194,66 +147,8 @@ Route::get('/cv',[ App\Http\Controllers\InfoController::class,'downloadCv'])->na
     });
 
 
-    // Route::get('settings', 'WEB\Admin\SettingController@index')->name('settings.index');
 
-
-
-
-
-    Route::group(['prefix' => 'provider'], function () {
-        Route::get('/', function () {
-            return route('/login');
-        });
-        Route::get('/login', 'SubAdminAuth\LoginController@showLoginForm')->name('subadmin.login.form');
-        Route::post('/login', 'SubAdminAuth\LoginController@login')->name('subadmin.login');
-        Route::get('/logout', 'SubAdminAuth\LoginController@logout')->name('subadmin.logout');
-
-    });
-    Route::group(['middleware' => ['web', 'subadmin'], 'prefix' => 'provider', 'as' => 'provider.',], function () {
-        Route::get('/', function () {
-            return redirect('/provider/home');
-        });
-        Route::post('/changeStatus/{model}', 'WEB\SubAdmin\HomeController@changeStatus');
-
-        Route::get('home', 'WEB\SubAdmin\HomeController@index')->name('provider.home');
-
-
-        Route::get('/editMyProfile', 'WEB\SubAdmin\SubAdminController@editMyProfile')->name('provider.editMyProfile');
-        Route::post('/updateProfile', 'WEB\SubAdmin\SubAdminController@updateProfile')->name('provider.updateProfile');
-
-        Route::get('/categories/{id}/meals', 'WEB\SubAdmin\CategoryController@meals');
-
-        
-
-        Route::get('/report/meals', 'WEB\SubAdmin\MealController@report')->name('mealsReport');
-//        Route::get('/export/excel/meals', 'WEB\SubAdmin\MealController@exportExcel');
-        Route::get('/MealsReportForProvider/excel/meals', 'WEB\SubAdmin\MealController@MealsReportForProvider');
-        Route::resource('/meals', 'WEB\SubAdmin\MealController');
-        Route::get('/meals/{id}/options', 'WEB\SubAdmin\MealController@options');
-        Route::get('/meals/{id}/createOption', 'WEB\SubAdmin\MealController@createOption');
-        Route::post('/meals/{id}/storeOption', 'WEB\SubAdmin\MealController@storeOption');
-        Route::get('/meals/{id}/editOption', 'WEB\SubAdmin\MealController@editOption');
-        Route::post('/meals/{id}/updateOption', 'WEB\SubAdmin\MealController@updateOption');
-        Route::delete('/meals/{id}/deleteOption', 'WEB\SubAdmin\MealController@deleteOption');
-        Route::delete('/meals/{id}/deleteOffer', 'WEB\SubAdmin\MealController@deleteOffer');
-
-        Route::resource('/option_values', 'WEB\SubAdmin\OptionValueController');
-
-        Route::get('getNewOrdersCount/orders','WEB\SubAdmin\OrderController@getNewOrdersCount');
-        Route::get('invoice/orders/{id}','WEB\SubAdmin\OrderController@invoice')->name('invoice');
-        Route::get('refund/orders/{id}','WEB\Admin\OrderController@refund');
-        Route::get('changeOrdersCount/orders','WEB\SubAdmin\OrderController@changeOrdersCount');
-        Route::get('/orders/changeStatus/{id}/{status}', 'WEB\SubAdmin\OrderController@changeStatus')->name('changeOrderStatus');
-        Route::get('/report/orders', 'WEB\SubAdmin\OrderController@report')->name('ordersReport');
-        Route::get('/pdfOrders', 'WEB\SubAdmin\OrderController@pdfOrders');
-        Route::get('/OrdersExportForProvider/excel/orders', 'WEB\SubAdmin\OrderController@exportExcel');
-        Route::get('/OrdersReportForProvider/excel/orders', 'WEB\SubAdmin\OrderController@OrdersReportForProvider');
-        Route::resource('/orders', 'WEB\SubAdmin\OrderController');
-
-        // Route::get('settings', 'WEB\SubAdmin\SettingController@index');
-        // Route::post('settings', 'WEB\SubAdmin\SettingController@update');
-
-    });
+ 
 
 
 

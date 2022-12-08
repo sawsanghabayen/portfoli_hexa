@@ -559,31 +559,31 @@ INSERT INTO `category_translations` (`id`, `category_id`, `locale`, `name`, `cre
 -- Table structure for table `contacts`
 --
 
-CREATE TABLE `contacts` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `mobile` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `message` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `is_read` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
-  `deleted_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+-- CREATE TABLE `contacts` (
+--   `id` bigint(20) UNSIGNED NOT NULL,
+--   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+--   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+--   `mobile` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+--   `message` text COLLATE utf8mb4_unicode_ci NOT NULL,
+--   `is_read` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL,
+--   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+--   `updated_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
+--   `deleted_at` timestamp NULL DEFAULT NULL
+-- ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
+-- --
 -- Dumping data for table `contacts`
 --
 
-INSERT INTO `contacts` (`id`, `name`, `email`, `mobile`, `message`, `is_read`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'hello', 'a@a.com', '13456789', '111111111111111111', '1', '2022-08-07 05:14:28', '2022-08-17 05:34:28', NULL),
-(2, 'hello', 'a@a.com', '13456789', '111111111111111111', '1', '2022-08-17 05:12:23', '2022-08-17 05:31:30', NULL),
-(3, 'hello', 'a@a.com', '13456789', '111111111111111111', '0', '2022-08-17 05:12:40', '2022-08-17 08:55:35', NULL),
-(4, 'hello', 'a@a.com', '13456789', '111111111111111111', '0', '2022-08-17 05:15:07', '2022-08-17 05:15:07', NULL),
-(5, 'hello', 'a@a.com', '13456789', '33333333333333333333333', '0', '2022-08-17 06:20:37', '2022-08-23 09:46:52', NULL),
-(6, 'hello', 'a@a.com', '13456789', '111111111111111111', '0', '2022-08-18 07:20:41', '2022-08-18 07:20:41', NULL);
+-- INSERT INTO `contacts` (`id`, `name`, `email`, `mobile`, `message`, `is_read`, `created_at`, `updated_at`, `deleted_at`) VALUES
+-- (1, 'hello', 'a@a.com', '13456789', '111111111111111111', '1', '2022-08-07 05:14:28', '2022-08-17 05:34:28', NULL),
+-- (2, 'hello', 'a@a.com', '13456789', '111111111111111111', '1', '2022-08-17 05:12:23', '2022-08-17 05:31:30', NULL),
+-- (3, 'hello', 'a@a.com', '13456789', '111111111111111111', '0', '2022-08-17 05:12:40', '2022-08-17 08:55:35', NULL),
+-- (4, 'hello', 'a@a.com', '13456789', '111111111111111111', '0', '2022-08-17 05:15:07', '2022-08-17 05:15:07', NULL),
+-- (5, 'hello', 'a@a.com', '13456789', '33333333333333333333333', '0', '2022-08-17 06:20:37', '2022-08-23 09:46:52', NULL),
+-- (6, 'hello', 'a@a.com', '13456789', '111111111111111111', '0', '2022-08-18 07:20:41', '2022-08-18 07:20:41', NULL);
 
--- --------------------------------------------------------
+-- -- --------------------------------------------------------
 
 --
 -- Table structure for table `cuisines`
