@@ -147,7 +147,7 @@ class InfoController extends Controller
         $info->birthdate = $request->get('birthdate');
 
            if ($request->hasFile('image')) {
-            $info->image =  $this->storeImage( $request->file('image'), 'infos',$info->getRawOriginal('image'),null,512);
+            $info->image =  $this->storeImage( $request->file('image'), 'infos',$info->image,null,512);
         }
         if ($request->hasFile('cv')) {
 

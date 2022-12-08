@@ -44,16 +44,16 @@ class AppServiceProvider extends ServiceProvider
 
 
             //...with this variable
-            // $view->with([
-            //     'setting' => Setting::query()->first(),
-            //     'locales'=> Language::all(),
-            //     'admin'=>Admin::first(),
-            //     'contact'=> Contact::where('is_read',0)->count(),
-            //     'count_orders'=> 1,
-            //     'count_categories'=> 5,
-            //   //  'users_count'=>User::count(),
+            $view->with([
+                'setting' => Setting::query()->first(),
+                'locales'=> Language::all(),
+                'admin'=>Admin::first(),
+                // 'contact'=> Contact::where('is_read',0)->count(),
+                // 'count_orders'=> 1,
+                // 'count_categories'=> 5,
+              //  'users_count'=>User::count(),
 
-            // ]);
+            ]);
         });
     }
 }
