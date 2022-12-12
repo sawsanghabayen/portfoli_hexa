@@ -252,19 +252,7 @@
                             </div>
                         </div>
 
-                        {{-- <div id ="cv_div" class="form-group row">
-                            <label class="col-3 col-form-label">{{__('cp.cv')}}</label>
-    
-                            <input id= "cv" name="cv" type="file" class="form-control"><br/>
-                            <div class="progress">
-                                <div class="bar"></div >
-                                <div class="percent">0%</div >
-                            </div> 
-                             <br>
-                        </div> --}}
-
-          
-                     
+                   
                     </div>
                     </div>
                 

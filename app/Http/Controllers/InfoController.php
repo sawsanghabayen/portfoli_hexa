@@ -113,7 +113,8 @@ class InfoController extends Controller
             'dribbble' => 'required|string|min:3',
             'youtube_url' => 'required|url',
             'birthdate' => 'required|date',
-            // 'image' => 'image|mimes:jpeg,jpg,png,gif',
+            // 'image' => 'nullable|image|mimes:jpeg,jpg,png,gif',
+            // 'cv' => "required|mimes:pdf|max:10000",
 
         ];
         $locales = Language::all()->pluck('lang');
