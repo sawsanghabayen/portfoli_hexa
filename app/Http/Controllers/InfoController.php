@@ -95,7 +95,6 @@ class InfoController extends Controller
             'freelance_active' => 'nullable',
             'facebook_url' => 'required|url',
             'twitter_url' => 'required|url',
-            'link' => 'required|string|min:3',
             'birthdate' => 'required|date',
             // 'image' => 'nullable|image|mimes:jpeg,jpg,png,gif',
 
@@ -125,7 +124,6 @@ class InfoController extends Controller
         $info->freelance_active = $request->has('freelance_active');
         $info->facebook_url = $request->get('facebook_url');
         $info->twitter_url = $request->get('twitter_url');
-        $info->link = $request->get('link');
 
         $info->birthdate = $request->get('birthdate');
 

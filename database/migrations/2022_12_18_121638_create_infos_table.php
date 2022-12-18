@@ -23,7 +23,6 @@ class CreateInfosTable extends Migration
             $table->text('languages');
             $table->boolean('freelance_active')->default(false);
             $table->string('facebook_url',200);
-            $table->string('link',200);
             $table->string('twitter_url',200);
             $table->string('image')->nullable;
             $table->timestamps();
