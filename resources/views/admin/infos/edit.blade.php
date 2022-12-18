@@ -167,7 +167,14 @@
                                     <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.twitter_url')}}</span>
                                 </div>
                             </div>    
-                    
+                            <div class="form-group row mt-4">
+                                <label class="col-3 col-form-label">{{__('cp.link')}}:</label>
+                                <div class="col-9">
+                                    <input type="text" class="form-control" id="link" name="link" value="{{$info->link}}"
+                                        placeholder="Enter link" />
+                                    <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.link')}}</span>
+                                </div>
+                            </div>
                           
                             <div class="form-group row">
                                 <label class="col-3 col-form-label">{{__('cp.freelance_status')}}</label>

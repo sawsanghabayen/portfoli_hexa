@@ -27,6 +27,7 @@ class InfoSeeder extends Seeder
             'experience' => '2',
             'freelance_active' => false,
             'facebook_url' => 'https://www.facebook.com/sawsan.s.ghabayen/',
+            'link' => 'https://www.facebook.com/',
             'twitter_url' => 'https://www.facebook.com/sawsan.s.ghabayen/',
             'image' => '',
             

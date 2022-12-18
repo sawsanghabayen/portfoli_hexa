@@ -415,6 +415,10 @@
                                         <h6 class="font-weight-600"><span class="contact-title">{{__('cp.instagram')}}</span><i class="fa fa-instagram"></i><span class="contact-content">{{$infos[0]->facebook_url}}</span></h6>
 
                                     </li>
+                                    <li>
+                                        <h6 class="font-weight-600"><span class="contact-title">{{__('cp.link')}}</span><i class="fa fa-link"></i><span class="contact-content">{{$infos[0]->link}}</span></h6>
+
+                                    </li>
                                    
                                 </ul>
 
@@ -429,8 +433,7 @@
                                         </li>
                                         <li class="youtube"><a title="Youtube" href="{{$infos[0]->youtube_url}}"><i class="fa fa-youtube"></i></a>
                                         </li>
-                                        <li class="dribbble"><a title="Dribbble" href="{{$infos[0]->dribbble}}"><i class="fa fa-dribbble"></i></a>
-                                        </li>
+                                        
                                     </ul>
                                 </div>
                                 <!-- Social Media Profiles Ends -->
