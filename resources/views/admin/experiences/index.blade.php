@@ -107,17 +107,17 @@
 
                                     </td>
 
-                                    <div class="modal-footer">
-                                        <button class="btn default" data-dismiss="modal" aria-hidden="true">{{__('cp.cancel')}}</button>
-                                        <a onclick=""><button class="btn btn-danger">{{__('cp.delete')}}</button></a>
-                                    </div>
+                                  
                                     
                                 </tr>
                             @empty
 
                             @endforelse
 
-
+                            <div class="modal-footer">
+                                <button class="btn default" data-dismiss="modal" aria-hidden="true">{{__('cp.cancel')}}</button>
+                                <a onclick=""><button class="btn btn-danger">{{__('cp.delete')}}</button></a>
+                            </div>
                             </tbody>
                         </table>
 {{--                            {{$items->appends($_GET)->links("pagination::bootstrap-4") }}--}}

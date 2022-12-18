@@ -31,11 +31,7 @@ class HomeController extends Controller
         $array =json_decode($infos[0]->languages);
         
         $skills=Skill::all();
-        // $array =json_decode($infos[0]->languages);
-
-        // $langs_checked=Language::whereIn('lang_code',$array)->get();
-
-       
+      
         return response()->view('portfolio.index',['infos'=>$infos, 'array'=>$array,'educations'=>$educations,'experiences'=>$experiences,'projects'=>$projects,'settings'=>$settings,'skills'=>$skills]);
 
     }

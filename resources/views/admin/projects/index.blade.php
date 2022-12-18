@@ -71,16 +71,10 @@
                                 </th>
                                 
                                 <th style="min-width: 120px">{{__('cp.image')}}</th>
-                                <th style="min-width: 120px">{{__('cp.video')}}</th>
-                                <th style="min-width: 120px">{{__('cp.slider_image')}}</th>
-                                <th style="min-width: 120px">{{__('cp.youtube_url')}}</th>
-                                <th style="min-width: 150px">{{__('cp.category')}}</th>
                                 <th style="min-width: 150px">{{__('cp.name')}}</th>
-                                <th style="min-width: 150px">{{__('cp.client')}}</th>
-                                <th style="min-width: 150px">{{__('cp.technologies')}}</th>
-                                <th style="min-width: 150px">{{__('cp.duration')}}</th>
-                                <th style="min-width: 150px">{{__('cp.budget')}}</th>
-                                <th style="min-width: 150px">{{__('cp.github_url')}}</th>
+                                {{-- <th style="min-width: 150px">{{__('cp.technologies')}}</th>
+                                <th style="min-width: 150px">{{__('cp.duration')}}</th> --}}
+                                {{-- <th style="min-width: 150px">{{__('cp.github_url')}}</th> --}}
                             </tr>
                             </thead>
                             <tbody>
@@ -113,57 +107,16 @@
                                     </td>
                            
                                
-                                    <td>
-                                        {{-- <span class="text-dark-75 font-weight-bolder d-block font-size-lg">{{$project->f_name}}</span> --}}
-                                    </td>
-
-                                    <td class="pl-0 py-8">
-                                        <div class="d-flex align-items-center">
-                                        <div class="symbol symbol-50 symbol-light mr-4">
-                                            <span class="symbol-label">
-                                                @if ($project->main_image != null)
-            
-                                                <img src="{{Storage::url('images/projects/' .$project->main_image ?? '')}}"
-                                                    class="h-75 align-self-end" alt="" />
-                                                @else
-                                                <img src="{{asset('controlPanel/assets/media/users/project.jpg')}}"
-                                                class="h-75 align-self-end" alt="" />
-                                                @endif
-                                            </span>
-                                        </div>
-                                        </div>
-                                    </td>
+          
 
 
-                                    <td>
-                                        <span class="text-dark-75 font-weight-bolder d-block font-size-lg">{{$project->url_youtube}}</span>
-
-                                    </td>
-                                    <td>
-                                        <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                        @if( $project->category_id == 1 )
-                                        IMAGE FORMATE 
-                                        @elseif( $project->category_id == 2 )
-                                        VIDEO FORMATE 
-                                        @elseif( $project->category_id == 3 )
-                                        SLIDER FORMATE 
-                                        @else
-                                        YOUTUBE FORMATE 
-                                        @endif
-                                        
-                                        
-                                        </span>
-
-                                    </td>
+                                 
                                     <td>
                                         <span class="text-dark-75 font-weight-bolder d-block font-size-lg">{{$project->name}}</span>
 
                                     </td>
-                                    <td>
-                                        <span class="text-dark-75 font-weight-bolder d-block font-size-lg">{{$project->client}}</span>
-
-                                    </td>
-                                    <td>
+     
+                                    {{-- <td>
                                        
                                         <span class="text-dark-75 font-weight-bolder d-block font-size-lg">{{$project->technologies}}</span>
 
@@ -173,17 +126,14 @@
                                         <span class="text-dark-75 font-weight-bolder d-block font-size-lg">{{$project->duration}}</span>
 
                                        
-                                    </td>
-                                    <td>
-                                        <span class="text-dark-75 font-weight-bolder d-block font-size-lg">{{$project->budget}}</span>
-                                    </td>
+                                    </td> --}}
                                   
                                    
-                                    <td>
+                                    {{-- <td>
                                         <span class="text-dark-75 font-weight-bolder d-block font-size-lg">{{$project->url_website}}</span>
 
                                        
-                                    </td>
+                                    </td> --}}
                                    
                                     {{-- @can([ 'Update-Basic_project']) --}}
                        
@@ -213,7 +163,7 @@
 
                             </tbody>
                         </table>
-{{--                            {{$items->appends($_GET)->links("pagination::bootstrap-4") }}--}}
+{{--                          
                     </div>
                 </div>
             </div>

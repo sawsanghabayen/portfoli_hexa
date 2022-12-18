@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProjectTranslationsTable extends Migration
+class CreateInfoTranslationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreateProjectTranslationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('project_translations', function (Blueprint $table) {
+        Schema::create('info_translations', function (Blueprint $table) {
             $table->id();
-            $table->string('name',20);
-            $table->string('client',20);
+            $table->string('full_name',45);
+            $table->string('nationality',20);
+            $table->string('location',200);
+            $table->string('job',100);
             $table->string('locale');
-            $table->integer('project_id');
+            $table->integer('info_id');
             $table->timestamps();
         });
     }
@@ -30,6 +32,6 @@ class CreateProjectTranslationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('project_translations');
+        Schema::dropIfExists('info_translations');
     }
 }

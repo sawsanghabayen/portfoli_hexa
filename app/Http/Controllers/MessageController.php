@@ -108,14 +108,15 @@ class MessageController extends Controller
      */
     public function destroy(Message $message)
     {
-        $deleted = $message->delete();
+        $isDeleted = $message->delete();
+        
         return response()->json(
             [
-                'title' => $deleted ? 'Deleted!' : 'Delete Failed!',
-                'text' => $deleted ? 'Message deleted successfully' : 'Message deleting failed!',
-                'icon' => $deleted ? 'success' : 'error'
+                'title' => $isDeleted ? 'Deleted!' : 'Delete Failed!',
+                'text' => $isDeleted ? 'Message deleted successfully' : 'Message deleting failed!',
+                'icon' => $isDeleted ? 'success' : 'error'
             ],
-            $deleted ? Response::HTTP_OK : Response::HTTP_BAD_REQUEST
+            $isDeleted ? Response::HTTP_OK : Response::HTTP_BAD_REQUEST
         );
     }
 }

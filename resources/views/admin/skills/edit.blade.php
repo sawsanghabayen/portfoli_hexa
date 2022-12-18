@@ -45,20 +45,16 @@
 
                     <div class="row col-sm-12">
                         <div class="card-body">
-                            <div class="row">
-                                @foreach($locales as $locale)
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>{{__('cp.title_'.$locale->lang)}}</label>
-                                            <input required 
-                                            {{($locale->lang == 'ar') ? 'dir=rtl' :'' }}  value="{{old('title_'.$locale->lang,@$skill->translate($locale->lang)->title)}}"type="text" class="form-control" id="title"  name="title_{{$locale->lang}}"
-                                            placeholder="Enter title" value="{{old('title_'.$locale->lang)}}"/>
-                                        <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.title_'.$locale->lang)}} </span>
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
+                          
 
+                            <div class="form-group row mt-4">
+                                <label class="col-3 col-form-label">{{__('cp.title')}}:</label>
+                                <div class="col-9">
+                                    <input type="text" class="form-control" value="{{$skill->title}}" name="title" 
+                                        placeholder="Enter title" />
+                                    <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.title')}}</span>
+                                </div>
+                            </div>
                             <div class="form-group row mt-4">
                                 <label class="col-3 col-form-label">{{__('cp.degree')}} %:</label>
                                 <div class="col-9">

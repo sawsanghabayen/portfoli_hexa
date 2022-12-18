@@ -20,7 +20,7 @@
                 <!--begin::setting-->
                 <div class="d-flex align-items-center flex-wrap mr-1">
                     <div class="d-flex align-items-baseline mr-5">
-                        <h3>{{__('cp.add_category')}}</h3>
+                        <h3>{{__('cp.edit_setting')}}</h3>
                     </div>
                 </div>
                 <!--end::setting-->

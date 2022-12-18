@@ -44,18 +44,14 @@
 
                     <div class="row col-sm-12">
                         <div class="card-body">
-                            <div class="row">
-                                @foreach($locales as $locale)
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>{{__('cp.title_'.$locale->lang)}}</label>
-                                            <input required 
-                                            {{($locale->lang == 'ar') ? 'dir=rtl' :'' }} type="text" class="form-control" id="title"  name="title_{{$locale->lang}}"
-                                            placeholder=" {{__('cp.title_'.$locale->lang)}}" value="{{old('title_'.$locale->lang)}}"/>
-                                        <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.title_'.$locale->lang)}} </span>
-                                        </div>
-                                    </div>
-                                @endforeach
+                            
+                            <div class="form-group row mt-4">
+                                <label class="col-3 col-form-label">{{__('cp.title')}}:</label>
+                                <div class="col-9">
+                                    <input type="text" class="form-control" placeholder="{{__('cp.enter_title')}}" name="title" 
+                                        placeholder="Enter title" />
+                                    <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.title')}}</span>
+                                </div>
                             </div>
 
                             <div class="form-group row mt-4">
@@ -66,6 +62,7 @@
                                     <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.degree')}} %</span>
                                 </div>
                             </div>
+                          
                         
                         
                         

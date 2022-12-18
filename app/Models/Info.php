@@ -10,7 +10,7 @@ class Info extends Model
 {
     use HasFactory, Translatable;
 
-    public $translatedAttributes = ['f_name','l_name','location','job'];
+    public $translatedAttributes = ['full_name','nationality','location','job'];
     protected $hidden=['translations','updated_at','deleted_at'];
 
     public function getActiveStatusAttribute()

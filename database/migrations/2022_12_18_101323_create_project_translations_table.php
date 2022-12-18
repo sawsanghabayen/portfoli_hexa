@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSkillsTable extends Migration
+class CreateProjectTranslationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreateSkillsTable extends Migration
      */
     public function up()
     {
-        Schema::create('skills', function (Blueprint $table) {
+        Schema::create('project_translations', function (Blueprint $table) {
             $table->id();
-            $table->integer('degree');
+            $table->string('name',20);
+            $table->string('locale');
+            $table->integer('project_id');
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ class CreateSkillsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('skills');
+        Schema::dropIfExists('project_translations');
     }
 }

@@ -56,11 +56,10 @@
                                             <span></span></label>
                                     </div>
                                 </th>
-                                <th style="min-width: 120px">{{__('cp.imge')}}</th>
-                                {{-- <th style="min-width: 120px">{{__('cp.cv')}}</th> --}}
-                                {{-- <th style="min-width: 120px">{{__('cp.language')}}</th> --}}
-                                <th style="min-width: 150px">{{__('cp.f_name')}}</th>
-                                <th style="min-width: 150px">{{__('cp.l_name')}}</th>
+                                <th style="min-width: 120px">{{__('cp.image')}}</th>
+                               
+                                <th style="min-width: 150px">{{__('cp.full_name')}}</th>
+                              
                                 <th style="min-width: 150px">{{__('cp.birthdate')}}</th>
                                 <th style="min-width: 150px">{{__('cp.email')}}</th>
                                 <th style="min-width: 150px">{{__('cp.mobile')}}</th>
@@ -71,9 +70,7 @@
                                 <th style="min-width: 150px">{{__('cp.freelance_active')}}</th>
                                 <th style="min-width: 150px">{{__('cp.job')}}</th>
                                 <th style="min-width: 150px">{{__('cp.facebooke_url')}}</th>
-                                <th style="min-width: 150px">{{__('cp.youtube_url')}}</th>
                                 <th style="min-width: 150px">{{__('cp.twitter_url')}}</th>
-                                <th style="min-width: 150px">{{__('cp.dribbble')}}</th>
                                 <th style="min-width: 150px">{{__('cp.skybe')}}</th>
                             </tr>
                             </thead>
@@ -108,11 +105,9 @@
                                
                                
                                     <td>
-                                        <span class="text-dark-75 font-weight-bolder d-block font-size-lg">{{$info->f_name}}</span>
+                                        <span class="text-dark-75 font-weight-bolder d-block font-size-lg">{{$info->full_name}}</span>
                                     </td>
-                                    <td>
-                                        <span class="text-dark-75 font-weight-bolder d-block font-size-lg">{{$info->l_name}}</span>
-                                    </td>
+                                
                                     <td>
                                         <span class="text-dark-75 font-weight-bolder d-block font-size-lg">{{$info->birthdate}}</span>
                                     </td>
@@ -162,11 +157,7 @@
                                             class="text-dark-75 font-weight-bolder d-block font-size-lg">{{$info->facebook_url}}</span>
                                        
                                     </td>
-                                    <td>
-                                        <span
-                                            class="text-dark-75 font-weight-bolder d-block font-size-lg">{{$info->youtube_url}}</span>
-                                       
-                                    </td>
+
                                     <td>
                                         <span
                                             class="text-dark-75 font-weight-bolder d-block font-size-lg">{{$info->twitter_url}}</span>

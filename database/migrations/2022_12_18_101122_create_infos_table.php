@@ -19,18 +19,13 @@ class CreateInfosTable extends Migration
             $table->string('mobile',20);
           
             $table->string('birthdate',20);
-            $table->string('nationality',20);
             $table->string('experience',20);
             $table->text('languages');
-           
             $table->boolean('freelance_active')->default(false);
             $table->string('facebook_url',200);
-            $table->string('skybe',200);
-            $table->string('dribbble',200);
+            $table->string('link',200);
             $table->string('twitter_url',200);
-            $table->string('youtube_url');
             $table->string('image')->nullable;
-            $table->string('cv')->nullable;
             $table->timestamps();
         });
     }

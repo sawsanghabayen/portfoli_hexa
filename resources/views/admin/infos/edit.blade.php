@@ -53,11 +53,11 @@
                                 @foreach($locales as $locale)
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>{{__('cp.f_name_'.$locale->lang)}}</label>
+                                            <label>{{__('cp.full_name_'.$locale->lang)}}</label>
                                             <input required 
-                                            {{($locale->lang == 'ar') ? 'dir=rtl' :'' }} type="text" class="form-control" id="f_name" name="f_name_{{$locale->lang}}"
-                                            value="{{old('f_name_'.$locale->lang,@$info->translate($locale->lang)->f_name)}}"
-                                                placeholder="Enter full f_name" />
+                                            {{($locale->lang == 'ar') ? 'dir=rtl' :'' }} type="text" class="form-control" id="full_name" name="full_name_{{$locale->lang}}"
+                                            value="{{old('full_name_'.$locale->lang,@$info->translate($locale->lang)->full_name)}}"
+                                                placeholder="Enter full_name" />
                                             <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.f_name')}}</span>
                                         </div>
                                     </div>
@@ -67,16 +67,17 @@
                                 @foreach($locales as $locale)
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>{{__('cp.l_name_'.$locale->lang)}}</label>
+                                            <label>{{__('cp.nationality_'.$locale->lang)}}</label>
                                             <input required 
-                                            {{($locale->lang == 'ar') ? 'dir=rtl' :'' }} type="text" class="form-control" id="l_name" name="l_name_{{$locale->lang}}"
-                                            value="{{old('l_name_'.$locale->lang,@$info->translate($locale->lang)->l_name)}}"
-                                                placeholder="Enter full l_name" />
-                                            <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.l_name')}}</span>
+                                            {{($locale->lang == 'ar') ? 'dir=rtl' :'' }} type="text" class="form-control" id="nationality" name="nationality_{{$locale->lang}}"
+                                            value="{{old('nationality_'.$locale->lang,@$info->translate($locale->lang)->nationality)}}"
+                                                placeholder="Enter nationality" />
+                                            <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.nationality')}}</span>
                                         </div>
                                     </div>
                                 @endforeach
                             </div>
+                          
 
                             <div class="row">
                                 @foreach($locales as $locale)
@@ -156,14 +157,9 @@
                                         placeholder="Enter facebook_url" />
                                     <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.facebook_url')}}</span>
                                 </div>
-                            </div>    <div class="form-group row mt-4">
-                                <label class="col-3 col-form-label">{{__('cp.youtube_url')}}:</label>
-                                <div class="col-9">
-                                    <input type="text" class="form-control" id="youtube_url" name="youtube_url" value="{{$info->youtube_url}}"
-                                        placeholder="Enter youtube_url" />
-                                    <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.youtube_url')}}</span>
-                                </div>
-                            </div>    <div class="form-group row mt-4">
+                            </div> 
+                             
+                              <div class="form-group row mt-4">
                                 <label class="col-3 col-form-label">{{__('cp.twitter_url')}}:</label>
                                 <div class="col-9">
                                     <input type="text" class="form-control" id="twitter_url" name="twitter_url" value="{{$info->twitter_url}}"
@@ -172,21 +168,14 @@
                                 </div>
                             </div>    
                             <div class="form-group row mt-4">
-                                <label class="col-3 col-form-label">{{__('cp.skybe_url')}}:</label>
+                                <label class="col-3 col-form-label">{{__('cp.link')}}:</label>
                                 <div class="col-9">
-                                    <input type="text" class="form-control" id="skybe" name="skybe" value="{{$info->skybe}}"
-                                        placeholder="Enter skybe" />
-                                    <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.skybe')}}</span>
+                                    <input type="text" class="form-control" id="link" name="link" value="{{$info->link}}"
+                                        placeholder="Enter link" />
+                                    <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.link')}}</span>
                                 </div>
                             </div>
-                            <div class="form-group row mt-4">
-                                <label class="col-3 col-form-label">{{__('cp.dribbble')}}:</label>
-                                <div class="col-9">
-                                    <input type="text" class="form-control" id="dribbble" name="dribbble" value="{{$info->dribbble}}"
-                                        placeholder="Enter dribbble" />
-                                    <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.dribbble')}}</span>
-                                </div>
-                            </div>
+                          
                             <div class="form-group row">
                                 <label class="col-3 col-form-label">{{__('cp.freelance_status')}}</label>
                                 <div class="col-3">
@@ -221,49 +210,38 @@
                             <span class="form-text text-muted">{{__('cp.please')}} {{__('cp.select_languages')}}</span>
                        
 
-                      
+                            <div id="image_div" class="form-group row">
+                                <label class="col-3 col-form-label">Image:</label>
+                                <div class="col-3">
+                                    <div class="image-input image-input-empty image-input-outline" id="image" name="image"
+                                        style="background-image: url({{$info->image}})">
+                                        <div class="image-input-wrapper"></div>
         
-                    
-                             
-                                {{-- </div> --}}
-                            {{-- </div> --}}
+                                        <label
+                                            class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow"
+                                            data-action="change" data-toggle="tooltip" title=""
+                                            data-original-title="Change avatar">
+                                            <i class="fa fa-pen icon-sm text-muted"></i>
+                                            <input type="file" name="image" accept=".png, .jpg, .jpeg" />
+                                            <input type="hidden" name="image" />
+                                        </label>
         
-                 
-                        {{-- </div> --}}
-                        <div class="card-header">
-                            <h3 class="card-title">{{__('cp.image')}}</h3>
-                        </div>
-                        <div class="card-body">
-                            <div class="form-group">
-                                <div class="col-md-6 col-md-offset-3">
-                                    <div class="fileinput-new thumbnail"
-                                         onclick="document.getElementById('edit_image').click()"
-                                         style="cursor:pointer">
-                                        <img src="{{$info->image}}" id="editImage" alt="">
+                                        <span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow"
+                                            data-action="cancel" data-toggle="tooltip" title="Cancel avatar">
+                                            <i class="ki ki-bold-close icon-xs text-muted"></i>
+                                        </span>
+        
+                                        <span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow"
+                                            data-action="remove" data-toggle="tooltip" title="Remove avatar">
+                                            <i class="ki ki-bold-close icon-xs text-muted"></i>
+                                        </span>
                                     </div>
-                                    <div class="btn red"
-                                         onclick="document.getElementById('edit_image').click()">
-                                        <i class="fa fa-pencil"></i>
-                                    </div>
-                                    <input type="file" class="form-control" name="image"
-                                           id="edit_image"
-                                           style="display:none">
                                 </div>
                             </div>
-                        </div>
 
 
 
-                <div id ="cv_div" class="form-group row">
-                    <label class="col-3 col-form-label">CV:</label>
-
-                    <input id= "cv" name="cv" type="file" class="form-control"><br/>
-                    <div class="progress">
-                        <div class="bar"></div >
-                        <div class="percent">0%</div >
-                    </div> 
-                     <br>
-                </div>
+       
 
                    
                     </div>
@@ -284,11 +262,11 @@
 @endsection
 
 @section('js')
-{{-- <script src="{{asset('assets/js/pages/crud/forms/widgets/bootstrap-select.js')}}"></script> 
- <script src="{{asset('assets/js/pages/crud/file-upload/image-input.js')}}"></script> --}}
+<script src="{{asset('assets/js/pages/crud/forms/widgets/bootstrap-select.js')}}"></script> 
+ <script src="{{asset('assets/js/pages/crud/file-upload/image-input.js')}}"></script>
 <script>
 
-// var image = new KTImageInput('image');
+var image = new KTImageInput('image');
     
 </script>
 

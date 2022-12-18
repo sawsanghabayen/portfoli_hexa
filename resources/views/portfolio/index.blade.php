@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="{{App::isLocale('en') ? 'en' : 'ar'}}" direction="{{App::isLocale('en') ? 'ltr' : 'rtl'}}"
-style="direction: {{App::isLocale('en') ? 'ltr' : 'rtl'}};">
+<html lang="{{app()->getLocale()}}" dir="{{(app()->getLocale() == 'ar') ? 'rtl' : 'ltr'}}">
 
 <head>
     <meta charset="utf-8">
-    <title>{{$infos[0]->f_name}} {{$infos[0]->l_name}}</title>
+    <title>{{$infos[0]->full_name}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Template Google Fonts -->
@@ -18,7 +17,7 @@ style="direction: {{App::isLocale('en') ? 'ltr' : 'rtl'}};">
     <link type="text/css" media="all" href="{{asset('portfolio/css/style.css')}}" rel="stylesheet">
     <link type="text/css" media="all" href="{{asset('portfolio/css/skins/goldrenrod.css')}}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
     <!-- Template JS Files -->
     <script src="{{asset('portfolio/js/modernizr.js')}}"></script>
@@ -97,6 +96,7 @@ style="direction: {{App::isLocale('en') ? 'ltr' : 'rtl'}};">
             <!-- Back To Home Ends [ONLY MOBILE] -->
             <!-- Home Section Starts -->
             <section id="home" class="active">
+
                 <!-- Text Rotator Starts -->
                 <div class="main-text-container">
                     <div class="main-text" id="selector">
@@ -104,7 +104,7 @@ style="direction: {{App::isLocale('en') ? 'ltr' : 'rtl'}};">
                         <h1 class="ah-headline">
                             {{__('cp.im')}}
 						  <span class="ah-words-wrapper">
-							<b class="is-visible">{{$infos[0]->f_name}} {{$infos[0]->l_name}}</b>
+							<b class="is-visible">{{$infos[0]->full_name}}</b>
 							<b>{{$infos[0]->job}}</b>
 						
 						  </span>
@@ -142,11 +142,9 @@ style="direction: {{App::isLocale('en') ? 'ltr' : 'rtl'}};">
 							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
 								<ul class="list-1">
 									<li>
-										<h6><span class="font-weight-600">{{__('cp.f_name')}}</span>{{$infos[0]->f_name}}</h6>
+										<h6><span class="font-weight-600">{{__('cp.full_name')}}</span>{{$infos[0]->full_name}}</h6>
 									</li>
-									<li>
-										<h6><span class="font-weight-600">{{__('cp.l_name')}}</span>{{$infos[0]->l_name}}</h6>
-									</li>
+									
 									<li>
 										<h6><span class="font-weight-600">{{__('cp.birthdate')}}</span>{{$infos[0]->birthdate}}</h6>
 									</li>
@@ -168,11 +166,7 @@ style="direction: {{App::isLocale('en') ? 'ltr' : 'rtl'}};">
 									</li>
 									<li>
 										<h6><span class="font-weight-600">{{__('cp.languages')}}</span> 
-                            {{-- @foreach ($langs_checked as $lang_checked) --}}
-                                            
-                                            {{-- {{$lang_checked->lang_name}} / --}}
-                                        
-                            {{-- @endforeach             --}}
+                    
 
                             @foreach ($array as $one)
                                             
@@ -192,16 +186,12 @@ style="direction: {{App::isLocale('en') ? 'ltr' : 'rtl'}};">
 										<h6><span class="font-weight-600">{{__('cp.email')}}</span>{{$infos[0]->email}}</h6>
 									</li>
 									<li>
-										<h6><span class="font-weight-600">{{__('cp.skybe')}}</span>{{$infos[0]->skybe}}</h6>
+										<h6><span class="font-weight-600">{{__('cp.link')}}</span>{{$infos[0]->link}}</h6>
 									</li>
-									<li>
-										<h6><span class="font-weight-600">{{__('cp.dribbble')}}</span>{{$infos[0]->dribbble}}</h6>
-									</li>
+									
 								</ul>
 							</div>
-							<div class="col-12 resume-btn-container">
-								<a href="{{route('portfolio.cv')}}" class="btn btn-resume"><span><i class="fa fa-download"></i>{{__('cp.download')}}</span></a>
-							</div>
+						
 						</div>
                         <!-- Personal Infos Ends -->
                     </div>
@@ -326,41 +316,14 @@ style="direction: {{App::isLocale('en') ? 'ltr' : 'rtl'}};">
                                 <ul class="row" id="portfolio-items">
                                     <!-- Portfolio Item Starts -->
                                     @foreach ($projects as $project )
-                                  {{-- {{ dd($project->images == null)}} --}}
                                     <li class="col-12 col-md-6 col-lg-4">
                                         <a href="#0" data-type="project-{{$project->id}}">
                                             <img src="{{$project->image ?? ''}}" alt="Project" class="img-fluid">
-                                            <div><span> @if( $project->category_id == 1)
-                                                @if (getLocal() =='en')
-                                                IMAGE FORMATE 
-                                                @elseif (getLocal() =='ar')
-                                                فئة الصورة
-                                                @endif
+                                            <div>
+                                            <span> 
+                                                {{__('cp.image_formate')}}
                                                     
-                                                @elseif( $project->category_id == 2 )
-                                                @if (getLocal() =='en')
-                                                VIDEO FORMATE 
-                                                @elseif (getLocal() =='ar')
-                                                فئة الفيديو 
-                                                @endif
-                                                    
-                                                
-                                                @elseif( $project->category_id == 3 )
-                                                
-                                                @if (getLocal() =='en')
-                                                SLIDER FORMATE  
-                                                @elseif (getLocal() =='ar')
-                                                فئة السلايدر 
-                                                @endif
-
-                                                @else
-                                                @if (getLocal() =='en')
-                                                YOUTUBE FORMATE 
-                                                @elseif (getLocal() =='ar')
-                                                فئة اليوتيوب 
-                                                @endif
- 
-                                                @endif</span>
+                                            </span>
                                             </div>
                                         </a>
                                     </li>
@@ -384,115 +347,27 @@ style="direction: {{App::isLocale('en') ? 'ltr' : 'rtl'}};">
                 <div class="project-info-container project-{{$project->id}}">
                     <!-- Main Content Starts -->
 
-                    @if($project->category_id == '1')
                     <div class="project-info-main-content">
                         <img src="{{$project->image ?? ''}} " alt="Project Image">
                     </div>
-                    @endif
-
-
-                    @if($project->category_id == '2')
-
-                    <div class="project-info-main-content">
-                        <video id="video" class="responsive-video" controls poster="img/projects/project-6.jpg">
-                            <source src="{{Storage::url($project->video ?? '')}}" type="video/mp4">
-                        </video>
-                    </div>
-                    @endif
-
-
-
-                    @if($project->category_id == '4')
-
-                    <div class="project-info-main-content">
-                        <div class="videocontainer">
-                            <iframe class="youtube-video" src="{{$project->url_youtube}}" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                    @endif
-
-                    @if($project->category_id == '3')
-
-                    <div class="project-info-main-content">
-                        <div id="slider" class="carousel slide portfolio-slider" data-ride="carousel">
-                            <!-- The slideshow -->
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    @if($project->images != null)
-                                    <img src="{{Storage::url('images/projects/'.$project->images[0]->name)}}" alt="slide 1">
-                                   @endif
-                                </div>
-                                <div class="carousel-item">
-                                    @if($project->images != null)
-
-                                    <img src="{{Storage::url('images/projects/'.$project->images[1]->name)}}" alt="slide 2">
-                                @endif
-                                </div>
-                                <div class="carousel-item">
-                                    @if($project->images != null)
-                                   
-                                    <img src="{{Storage::url('images/projects/'.$project->images[2]->name)}}" alt="slide 3">
-                                @endif
-                                </div>
-                            </div>
-                            <!-- Left and right controls -->
-                            <a class="carousel-control-prev" href="#slider" data-slide="prev"> <span class="fa fa-chevron-left carousel-controls"></span>
-                            </a>
-                            <a class="carousel-control-next" href="#slider" data-slide="next"> <span class="fa fa-chevron-right carousel-controls"></span>
-                            </a>
-                        </div>
-                    </div>
-                    @endif
-
-
-
-
-
+               
                     <!-- Main Content Ends -->
                     <!-- Project Details Starts -->
                     <div class="projects-info row">
                         <div class="col-12 col-sm-6 p-none">
                             <h3 class="font-weight-600 uppercase">
-                             @if( $project->category_id == 1 )
-                             @if (getLocal() =='en')
-                             IMAGE FORMATE 
-                             @elseif (getLocal() =='ar')
-                             فئة الصورة
-                             @endif
-                                        @elseif( $project->category_id == 2 )
-                                        @if (getLocal() =='en')
-                                                VIDEO FORMATE 
-                                                @elseif (getLocal() =='ar')
-                                                فئة الصورة
-                                                @endif
-                                        @elseif( $project->category_id == 3 )
-                                        @if (getLocal() =='en')
-                                                SLIDER FORMATE 
-                                                @elseif (getLocal() =='ar')
-                                                فئة الصورة
-                                                @endif
-                                        @else
-                                        @if (getLocal() =='en')
-                                        YOUTUBE FORMATE 
-                                        @elseif (getLocal() =='ar')
-                                        فئة الصورة
-                                        @endif
-                                        @endif
-                                        
-
-                            
-                         </h3>
+                                {{__('cp.image_formate')}}
+                     
+                            </h3>
                             <ul class="project-details">
                                 <li><i class="fa fa-file-text-o"></i><span class="font-weight-400 project-label"> {{__('cp.project')}} </span>: <span class="font-weight-600 uppercase">{{$project->name}}</span>
                                 </li>
-                                <li><i class="fa fa-user-o"></i><span class="font-weight-400 project-label"> {{__('cp.client')}}  </span>: <span class="font-weight-600 uppercase">{{$project->client}}</span>
-                                </li>
+                               
                                 <li><i class="fa fa-hourglass-o"></i><span class="font-weight-400 project-label"> {{__('cp.duration')}}  </span>: <span class="font-weight-600 uppercase">{{$project->duration}} {{__('cp.months')}}</span>
                                 </li>
                                 <li><i class="fa fa-code"></i> <span class="font-weight-400 project-label"> {{__('cp.technologies')}} </span> : <span class="font-weight-600 uppercase">{{$project->technologies}}</span>
                                 </li>
-                                <li><i class="fa fa-money"></i> <span class="font-weight-400 project-label"> {{__('cp.budget')}} </span> : <span class="font-weight-600 uppercase">{{$project->budget}} USD</span>
-                                </li>
+                                
                             </ul>
                             <a href="{{$project->url_website}}" class="btn"><span><i class="fa fa-external-link"></i>{{__('cp.preview')}} </span></a>
                         </div>
@@ -540,9 +415,7 @@ style="direction: {{App::isLocale('en') ? 'ltr' : 'rtl'}};">
                                         <h6 class="font-weight-600"><span class="contact-title">{{__('cp.instagram')}}</span><i class="fa fa-instagram"></i><span class="contact-content">{{$infos[0]->facebook_url}}</span></h6>
 
                                     </li>
-                                    <li>
-                                        <h6 class="font-weight-600"><span class="contact-title">{{__('cp.dribbble')}} </span><i class="fa fa-dribbble"></i><span class="contact-content">{{$infos[0]->dribbble}}</span></h6>
-                                    </li>
+                                   
                                 </ul>
 
                                 <!-- Social Media Profiles Starts -->
@@ -610,11 +483,11 @@ style="direction: {{App::isLocale('en') ? 'ltr' : 'rtl'}};">
     <!-- Preloader Starts -->
     <div class="preloader">
         <div class="preloader-container">
-            <h1>{{$infos[0]->f_name}}</h1>
+            <h1>{{$infos[0]->full_name}}</h1>
             <div id="progress-line-container">
                 <div class="progress-line"></div>
             </div>
-            <h1>{{$infos[0]->l_name}}</h1>
+            {{-- <h1>{{$infos[0]->l_name}}</h1> --}}
         </div>
     </div>
     <!-- Preloader Ends -->

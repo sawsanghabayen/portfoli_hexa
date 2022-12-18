@@ -122,8 +122,9 @@ Route::get('/cv',[ App\Http\Controllers\InfoController::class,'downloadCv'])->na
         Route::resource('skills', SkillController::class);
         Route::resource('projects', ProjectController::class);
         Route::resource('infos', InfoController::class);
-        Route::get('/messages', [App\Http\Controllers\MessageController::class ,'index'])->name('messages.index');
-        Route::delete('/messages/{id}', [App\Http\Controllers\MessageController::class ,'destroy'])->name('messages.delete');
+        Route::resource('messages', MessageController::class)->except([ 'store']);
+        // Route::get('/messages', [App\Http\Controllers\MessageController::class ,'index'])->name('messages.index');
+        // Route::delete('/messages/{id}', [App\Http\Controllers\MessageController::class ,'destroy'])->name('messages.delete');
         Route::get('profile/personal', [AuthController::class, 'profilePersonalInformation'])->name('admin.profile.personal-information');
     
         Route::put('profile/personal', [AuthController::class, 'updateProfilePersonalInformation'])->name('admin.profile.update-personal-information');

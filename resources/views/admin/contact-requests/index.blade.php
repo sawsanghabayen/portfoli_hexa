@@ -1,5 +1,5 @@
 @extends('layout.adminLayout')
-@section('title') {{ucwords(__('cp.educations'))}}
+@section('title') {{ucwords(__('cp.messages'))}}
 @endsection
 @section('css')
 
@@ -60,7 +60,6 @@
                         </td>
 
                         <td class="v-align-middle wd-15p optionAddHours">
-                          
                             <a href="#"  onclick="confirmDelete('{{$message->id}}', this)" role="button" title="{{__('cp.delete')}}" data-toggle="modal" class="btn btn-sm btn-clean btn-icon"><i class="la la-trash"></i></a>
 
 
@@ -98,21 +97,21 @@
         }
         });
     }
-     function performDelete(id, reference) {
+
+    function performDelete(id, reference) {
         axios.delete('/admin/messages/'+id)
         .then(function (response) {
-            // toastr.success(response.data.message);
             console.log(response);
             reference.closest('tr').remove();
             showMessage(response.data);
         })
         .catch(function (error) {
             console.log(error.response);
-            // toastr.error(error.response.data.message);
             showMessage(error.response.data);
         });
     }
-       function showMessage(data) {
+
+    function showMessage(data) {
         Swal.fire(
             data.title,
             data.text,

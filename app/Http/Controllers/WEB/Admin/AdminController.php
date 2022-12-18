@@ -70,7 +70,8 @@ class AdminController extends Controller
 
     public function index(Request $request)
     {
-        $items = Admin::where('id','!=',auth('admin')->user()->id)->where('id','!=','1')->filter()->orderByDesc('id')->paginate($this->settings->paginateTotal);
+        $items=Admin::all();
+        // $items = Admin::where('id','!=',auth('admin')->user()->id)->where('id','!=','1')->filter()->orderByDesc('id')->paginate($this->settings->paginateTotal);
         return view('admin.admin.home', [
             'items' => $items,
         ]);

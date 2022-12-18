@@ -19,43 +19,39 @@ class InfoSeeder extends Seeder
         Info::create([
             'email' => 'infon@gmail.com',
             'mobile' => '05912345789',
-            // 'f_name' => 'Info',
-            // 'l_name' => 'Name',
+        
             'birthdate' => Carbon::create('1999', '15', '12'),
             // 'location' => 'lorem epsum',
-            'nationality' => 'Palestinian',
+            // 'nationality' => 'Palestinian',
             'languages' => '["Arabic","English"]',
             'experience' => '2',
             'freelance_active' => false,
             'facebook_url' => 'https://www.facebook.com/sawsan.s.ghabayen/',
-            'skybe' => 'https://www.facebook.com/sawsan.s.ghabayen/',
+            'link' => 'https://www.facebook.com/',
             'twitter_url' => 'https://www.facebook.com/sawsan.s.ghabayen/',
-            'dribbble' => 'https://www.facebook.com/sawsan.s.ghabayen/',
-            'youtube_url' => 'https://www.facebook.com/sawsan.s.ghabayen/',
-            // 'job' => 'Laravel PHP',
             'image' => '',
-            'cv' => '',
             
         ]);
         InfoTranslation::create([
            
-            'f_name' => 'sawsan',
-            'l_name' => 'ghabayen',
+            'full_name' => 'Ala Fesifes',
             'location' => 'lorem epsum',
             'locale' => 'en',
             'info_id' => '1',
             'job' => 'Laravel PHP',
+            'nationality' => 'Palestinian',
            
             
         ]);
         InfoTranslation::create([
            
-            'f_name' => 'سوسن',
-            'l_name' => 'غباين',
+            'full_name' => 'علاء فسيفس',
             'location' => 'صضثصثق',
             'locale' => 'ar',
             'info_id' => '1',
             'job' => 'لارافيل ',
+            'nationality' => 'فلسطيني',
+
            
             
         ]);

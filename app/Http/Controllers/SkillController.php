@@ -42,25 +42,19 @@ class SkillController extends Controller
     {
        
         $roles = [
+            'title' => 'required|String|min:3',
             'degree' => 'required|numeric|min:1|max:100',
         ];
-        $locales = Language::all()->pluck('lang');
-        foreach ($locales as $locale) {
-            $roles['title_' . $locale] = 'required';
-        }
+       
        
 
         $this->validate($request, $roles);
 
         $item= new Skill();
         $item->degree=$request->get('degree');
-
-        foreach ($locales as $locale)
-        {
-            $item->translateOrNew($locale)->title = $request->get('title_' . $locale);
-        }
+        $item->title=$request->get('title');
+    
      
-
         $item->save();
         
         return redirect()->back()->with('status', __('cp.create'));
@@ -99,26 +93,21 @@ class SkillController extends Controller
     {
         $roles = [
             'degree' => 'required|numeric|min:1|max:100',
+            'title' => 'required|String|min:3',
+
         ];
-        $locales = Language::all()->pluck('lang');
-        foreach ($locales as $locale) {
-            $roles['title_' . $locale] = 'required';
-        }
        
 
         $this->validate($request, $roles);
 
         $skill->degree=$request->get('degree');
+        $skill->title=$request->get('title');
 
-        foreach ($locales as $locale)
-        {
-            $skill->translateOrNew($locale)->title = $request->get('title_' . $locale);
-        }
-     
+
 
         $skill->save();
         
-        return redirect()->back()->with('status', __('cp.create'));
+        return redirect()->back()->with('status', __('cp.update'));
     }
 
     /**

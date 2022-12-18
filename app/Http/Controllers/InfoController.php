@@ -24,9 +24,7 @@ class InfoController extends Controller
         // $languages=Language::all();
 
         $array =json_decode($infos[0]->languages);
-        // $langs_checked=Language::whereIn('lang',$array)->get();
-        // $lang_checked=Language::where('lang_code' ,'=','en')->get();
-        // dd($array);
+   
         return response()->view('admin.infos.index',['infos'=>$infos ,'array'=>$array]);
     }
 
@@ -62,16 +60,6 @@ class InfoController extends Controller
         //
     }
 
-    public function downloadCV()
-    {
-        // dd($info->cv);
-
-    $info=Info::first();
-    if($info->cv !=null)
-
-    return Storage::download($info->cv);
-        
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -103,27 +91,23 @@ class InfoController extends Controller
       
             'mobile' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10,',
             'email' => 'required|email|unique:admins',
-            'nationality' => 'required|string|min:3',
             'experience' => 'required|numeric',
             'freelance_active' => 'nullable',
-        
             'facebook_url' => 'required|url',
             'twitter_url' => 'required|url',
-            'skybe' => 'required|string|min:3',
-            'dribbble' => 'required|string|min:3',
-            'youtube_url' => 'required|url',
+            'link' => 'required|string|min:3',
             'birthdate' => 'required|date',
             // 'image' => 'nullable|image|mimes:jpeg,jpg,png,gif',
-            // 'cv' => "required|mimes:pdf|max:10000",
 
         ];
         $locales = Language::all()->pluck('lang');
         foreach ($locales as $locale) {
-            $roles['f_name_' . $locale] = 'required|string|min:3';
+            $roles['full_name_' . $locale] = 'required|string|min:3';
         }
         foreach ($locales as $locale) {
-            $roles['l_name_' . $locale] = 'required|string|min:3';
+            $roles['nationality_' . $locale] = 'required|string|min:3';
         }
+      
         foreach ($locales as $locale) {
             $roles['location_' . $locale] = 'required|string|min:3';
         }
@@ -135,39 +119,31 @@ class InfoController extends Controller
 
         $info->mobile=$request->get('mobile');
         $info->email=$request->get('email');
-        $info->nationality = $request->get('nationality');
+        // $info->nationality = $request->get('nationality');
         $info->experience = $request->get('experience');
-        // $array=explode(',', $request->get('languages'));
         $info->languages =$request->get('languages');
         $info->freelance_active = $request->has('freelance_active');
         $info->facebook_url = $request->get('facebook_url');
         $info->twitter_url = $request->get('twitter_url');
-        $info->skybe = $request->get('skybe');
-        $info->dribbble = $request->get('dribbble');
-        $info->youtube_url = $request->get('youtube_url');
+        $info->link = $request->get('link');
+
         $info->birthdate = $request->get('birthdate');
 
            if ($request->hasFile('image')) {
-            $info->image =  $this->storeImage( $request->file('image'), 'infos',$info->image,null,512);
+            $info->image =  $this->storeImage( $request->file('image'), 'infos',null,512);
         }
-        if ($request->hasFile('cv')) {
 
-            Storage::delete($info->cv);
-            $file = $request->file('cv');
-            $cvName =  time().'_info_cv.' . $file->getClientOriginalExtension();
-            $status = $request->file('cv')->storePubliclyAs('downloads/files', $cvName);
-            $cvPath = 'downloads/files/' . $cvName;
-            $info->cv = $cvPath;
-        
-    }
+  
+  
         foreach ($locales as $locale)
         {
-            $info->translateOrNew($locale)->f_name = $request->get('f_name_' . $locale);
+            $info->translateOrNew($locale)->full_name = $request->get('full_name_' . $locale);
         }
         foreach ($locales as $locale)
         {
-            $info->translateOrNew($locale)->l_name = $request->get('l_name_' . $locale);
+            $info->translateOrNew($locale)->nationality = $request->get('nationality_' . $locale);
         }
+     
         foreach ($locales as $locale)
         {
             $info->translateOrNew($locale)->location = $request->get('location_' . $locale);
@@ -179,7 +155,7 @@ class InfoController extends Controller
 
         $info->save();
         
-        // return redirect()->back()->with('status', __('cp.create'));
+        
         return redirect()->back()->with('status', __('cp.update'));
     }
 

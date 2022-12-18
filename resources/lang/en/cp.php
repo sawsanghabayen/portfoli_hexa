@@ -412,12 +412,16 @@ return [
    'preview'=>'PREVIEW',
    'close'=>'CLOSE',
    'months'=>'MONTHS',
+   'image_formate'=>'IMAGE FORMATE',
+
 
 
 
     // ABOUT SECTION
 
-    'f_name'=>'FIRST Name',
+    'full_name'=>'Full Name',
+    'full_name_en'=>'Full Name In English',
+    'full_name_ar'=>'Full Name In Arabic',
     'l_name'=>'Last Name',
     'birthdate'=>'Birthdate',
     'nationality'=>'Nationality',
@@ -427,7 +431,7 @@ return [
     'languages'=>'Languages',
     'phone'=>'Phone',
     'email'=>'Email',
-    'skype'=>'Skype',
+    'link'=>'Link',
     'dribbble'=>'Dribbble',
     'download'=>'DOWNLOAD MY CV',
     'education'=>'EDUCATION',
