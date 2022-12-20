@@ -279,7 +279,7 @@
                                 <span class="skill-text">{{$skill->title}}</span>
                                 <div class="chart-bar">
                                     <span class="item-progress" data-percent="{{$skill->degree}}" style="width: {{$skill->degree}}%;"></span>
-                                    <span class="percent" style="right: calc(20% - 21px);">{{$skill->degree}}%<div class="arrow"></div></span>
+                                    <span class="percent" style="left:{{$skill->degree}}%;">{{$skill->degree}}%<div class="arrow"></div></span>
                                 </div>
                             </div>
                             @endforeach
@@ -515,7 +515,7 @@
     //    alert(response.data.message);
       
       //application/x-www-form-urlencoded
-      axios.post('/portfolio-project/message', {
+      axios.post('/message', {
           name: document.getElementById('name').value,
           email: document.getElementById('email').value,
           message: document.getElementById('message').value,

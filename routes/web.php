@@ -34,7 +34,7 @@ Route::group([
     ]
 ], function () {
 
-    Route::prefix('portfolio-project')->group(function () {
+    Route::prefix('/')->group(function () {
         // Route::post('/contact', [ContactController::class ,'store'])->name('contacts.store');
     Route::post('/message', [App\Http\Controllers\MessageController::class ,'store'])->name('messages.store');
         

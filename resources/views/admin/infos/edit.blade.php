@@ -120,7 +120,7 @@
                             <div class="form-group row mt-4">
                                 <label class="col-3 col-form-label">{{__('cp.mobile')}}:</label>
                                 <div class="col-9">
-                                    <input type="text" class="form-control" id="mobile" name="mobile" value="{{$info->mobile}}"
+                                    <input type="text" class="form-control" id="mobile" name="mobile" value="{{old('mobile',$info->mobile)}}"
                                         placeholder="Enter user name" />
                                     <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.mobile')}}</span>
                                 </div>
@@ -128,7 +128,7 @@
                             <div class="form-group row mt-4">
                                 <label class="col-3 col-form-label">{{__('cp.nationality')}}:</label>
                                 <div class="col-9">
-                                    <input type="text" class="form-control" id="nationality" name="nationality" value="{{$info->nationality}}"
+                                    <input type="text" class="form-control" id="nationality" name="nationality" value="{{old('nationality',$info->nationality)}}"
                                         placeholder="Enter nationality " />
                                     <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.nationality')}}</span>
                                 </div>
@@ -137,7 +137,7 @@
                             <div class="form-group row mt-4">
                                 <label class="col-3 col-form-label">{{__('cp.experience')}}:</label>
                                 <div class="col-9">
-                                    <input type="text" class="form-control" id="experience" name="experience" value="{{$info->experience}}"
+                                    <input type="text" class="form-control" id="experience" name="experience" value="{{old('experience',$info->experience)}}"
                                         placeholder="Enter experience " />
                                     <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.experience')}}</span>
                                 </div>
@@ -145,7 +145,7 @@
                             <div class="form-group row">
                                 <label class="col-3 col-form-label">{{__('cp.email')}}:</label>
                                 <div class="col-9">
-                                    <input type="email" class="form-control" id="email"  name="email" value="{{$info->email}}"
+                                    <input type="email" class="form-control" id="email"  name="email" value="{{old('email',$info->email)}}"
                                         placeholder="Enter email" />
                                     <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.email')}}</span>
                                 </div>
@@ -153,7 +153,7 @@
                             <div class="form-group row mt-4">
                                 <label class="col-3 col-form-label">{{__('cp.facebook_url')}}:</label>
                                 <div class="col-9">
-                                    <input type="text" class="form-control" id="facebook_url" name="facebook_url" value="{{$info->facebook_url}}"
+                                    <input type="text" class="form-control" id="facebook_url" name="facebook_url" value="{{old('facebook_url',$info->facebook_url) }}"
                                         placeholder="Enter facebook_url" />
                                     <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.facebook_url')}}</span>
                                 </div>
@@ -162,7 +162,7 @@
                               <div class="form-group row mt-4">
                                 <label class="col-3 col-form-label">{{__('cp.twitter_url')}}:</label>
                                 <div class="col-9">
-                                    <input type="text" class="form-control" id="twitter_url" name="twitter_url" value="{{$info->twitter_url}}"
+                                    <input type="text" class="form-control" id="twitter_url" name="twitter_url" value="{{old('twitter_url',$info->twitter_url) }}"
                                         placeholder="Enter twitter_url" />
                                     <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.twitter_url')}}</span>
                                 </div>
@@ -170,7 +170,7 @@
                             <div class="form-group row mt-4">
                                 <label class="col-3 col-form-label">{{__('cp.link')}}:</label>
                                 <div class="col-9">
-                                    <input type="text" class="form-control" id="link" name="link" value="{{$info->link}}"
+                                    <input type="text" class="form-control" id="link" name="link" value="{{old('link',$info->link) }}"
                                         placeholder="Enter link" />
                                     <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.link')}}</span>
                                 </div>
@@ -181,8 +181,9 @@
                                 <div class="col-3">
                                     <span class="switch switch-outline switch-icon switch-success">
                                         <label>
+                                           {{-- {{ dd(old( 'freelance_active',$info->freelance_active ) == 'Available');}} --}}
                                             {{-- <input type="checkbox"  checked="checked"  id="freelance_active"> --}}
-                                            <input type="checkbox" @if($info->active_status == 'Available') checked="checked" @endif  id="freelance_active" name="freelance_active">
+                                            <input type="checkbox" @if(old( 'freelance_active',$info->freelance_active ) == 'Available') checked="checked" @endif   id="freelance_active" name="freelance_active">
                                             <span></span>
                                         </label>
                                     </span>
