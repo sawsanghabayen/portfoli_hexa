@@ -292,6 +292,7 @@ return [
     'add_education'=>'Add Education ',
     'educations'=>'Educations',
 
+
     'education_name'=>'Education Name',
     'education_name_en'=>'Education Name In English',
     'education_name_ar'=>'Education Name In Arabic',
@@ -455,10 +456,12 @@ return [
     'posts'=>'Posts',
     'Social_profile'=>'SOCIAL PROFILE',
    'get_in_touch'=>'GET IN TOUCH',
-
-
-
-
+   
+   
+   
+   
+   'full_time'=>'Full Time',
+   'part_time'=>'Part Time',
 
 
 

@@ -47,11 +47,25 @@
 
                     <div class="row col-sm-12">
                         <div class="card-body">
+                            <div class="form-group row">
+                                <label class="col-3 col-form-label">Type Of Job:</label>
+                            <div class="col-lg-4 col-md-9 col-sm-12">
+                                <div class="dropdown bootstrap-select form-control dropup">
+                                    <select class="form-control selectpicker" data-size="7"  name="type_id" required
+                                        title="Choose one of the following..." tabindex="null" data-live-search="true">
+                                        <option value="{{$experience->type_id}}" selected>{{__('cp.full_time')}}</option>
+                                        <option value="{{$experience->type_id}}" selected>{{__('cp.part_time')}}</option>
+                                       
+                                    </select>
+                                </div>
+                                <span class="form-text text-muted">Please select Type Job</span>
+                            </div>
+                            </div>
               
                             <div class="form-group row mt-4">
                                 <label class="col-3 col-form-label">{{__('cp.start_date')}}:</label>
                                 <div class="col-9">
-                                    <input type="date" class="form-control" value="{{$experience->start_date}}" name="start_date" 
+                                    <input required type="date" class="form-control" value="{{$experience->start_date}}" name="start_date" 
                                         placeholder="Enter start_date" />
                                     <span class="form-text text-muted">{{__('cp.please_enter')}} {{__('cp.start_date')}}</span>
                                 </div>

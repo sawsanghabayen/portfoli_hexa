@@ -41,23 +41,25 @@ class ExperienceController extends Controller
     public function store(Request $request)
     {
         $roles = [
+            'type_id'=>'required|numeric',
             'start_date' => 'required|date',
-            'end_date' => 'required|date',
+            'end_date' => 'nullable|date',
         ];
         $locales = Language::all()->pluck('lang');
         foreach ($locales as $locale) {
-            $roles['company_name_' . $locale] = 'required';
+            $roles['company_name_' . $locale] = 'required|string|min:3';
         }
         foreach ($locales as $locale) {
-            $roles['description_' . $locale] = 'required';
+            $roles['description_' . $locale] = 'required|string|min:3';
         }
         foreach ($locales as $locale) {
-            $roles['experience_name_' . $locale] = 'required';
+            $roles['experience_name_' . $locale] = 'required|string|min:3';
         }
 
         $this->validate($request, $roles);
 
         $item= new experience();
+        $item->type_id=$request->get('type_id');
         $item->start_date=$request->get('start_date');
         $item->end_date=$request->get('end_date');
 
@@ -113,8 +115,9 @@ class ExperienceController extends Controller
     public function update(Request $request, Experience $experience)
     {
         $roles = [
+            'type_id'=>'required|numeric',
             'start_date' => 'required|date',
-            'end_date' => 'required|date',
+            'end_date' => 'nullable|date',
         ];
         $locales = Language::all()->pluck('lang');
         foreach ($locales as $locale) {
@@ -129,7 +132,8 @@ class ExperienceController extends Controller
 
         $this->validate($request, $roles);
 
-        // $item= new experience();
+        $experience->type_id=$request->get('type_id');
+
         $experience->start_date=$request->get('start_date');
         $experience->end_date=$request->get('end_date');
 
