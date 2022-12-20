@@ -531,6 +531,10 @@
       })
       .catch(function (error) {
           console.log(error.response);
+          alert(error.response.data.message);
+
+        // alert(response.data.message);
+
         //   toastr.error(error.response.data.message);
       });
 
